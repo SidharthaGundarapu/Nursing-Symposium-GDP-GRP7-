@@ -17,6 +17,8 @@ Anakapalli Kanaka Venkata Phaneendra Babu
 
  I have an experience in automotive domain, have familiarized with the java concepts in the first semester and persuring the SWIFT(IOS) in the current semester.
  Doing the intiall reserach on the complete application development.
+ 
+ Conducted the meetings in the library as the inital discussion and seggregated the topics.
 
 
 Sidhartha Gundarapu
