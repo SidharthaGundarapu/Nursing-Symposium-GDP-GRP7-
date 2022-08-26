@@ -7,10 +7,10 @@ Our group's project is to develop a mobile application to aid with the schedulin
 ---
 
 ### Our Team
-Anakapalli Naga Venkata Phaneendra Babu
+Anakapalli Kanaka Venkata Phaneendra Babu
 
 Sidhartha Gundarapu
 
-Phani Naidu Ratnala
+Phani Padhmanabha Naidu Ratnala
 
 Alexander Dieringer
