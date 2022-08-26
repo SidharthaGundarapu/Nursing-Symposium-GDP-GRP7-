@@ -15,15 +15,9 @@ Our group's project is to develop a mobile application to aid with the schedulin
 Anakapalli Kanaka Venkata Phaneendra Babu
 
 Sidhartha Gundarapu
+ - Hi, I'm pursuing my graduation in Applied Computer Science at NWMSU. I am excited for the above stated mobile application development. My role in the project to schedule the team meetings, checking the updates regarding the project, as well as following the project development processes(SDLC or Agile) and dividing the project into sprints for ease development. And doing research about new technologies useful for the project.
 
-Phani Padmanabha Naidu Ratnala
-
-> Hello,I have hands on experience on front end development.My role in this project will be in front end user interface designing also will share my helping hand for my team mates in all the other areas for developing the mobile application.
->
-> Currently,I'm pursuing my masters in applied Computer Science at Northwest Missouri State University.
->
-> GDP is a oppurtunity to learn new things like how a team works and to conduct my roles and responsibilites as per the requirements of the project.
+Phani Padhmanabha Naidu Ratnala
 
 Alexander Dieringer
-
-- Hi, I'm a CS Graduate Student at NWMSU with both front & back end experience.  I enjoy the development process in general, as well as the planning and organizational aspects of project development.  My role in our project is to help withmore of the back end for our application, though I will potentially be helping in other areas.
+ - Hi, I'm a CS Graduate Student at NWMSU with both front & back end experience.  I enjoy the development process in general, as well as the planning and organizational aspects of project development.  My role in our project is to help withmore of the back end for our application, though I will potentially be helping in other areas.  
