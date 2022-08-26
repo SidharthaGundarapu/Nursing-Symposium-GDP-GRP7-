@@ -19,6 +19,8 @@ Sidhartha Gundarapu
 Phani Padmanabha Naidu Ratnala
 
 > Hello,I have hands on experience on front end development.My role in this project will be in front end user interface designing also will share my helping hand for my team mates in all the other areas for developing the mobile application.
+>
+> Currently,I'm pursuing my masters in applied Computer Science at Northwest Missouri State University.
 
 Alexander Dieringer
 
