@@ -15,6 +15,10 @@ We have added the project title as the "Nursing symposium"
 
 Anakapalli Kanaka Venkata Phaneendra Babu
 
+ I have an experience in automotive domain, have familiarized with the java concepts in the first semester and persuring the SWIFT(IOS) in the current semester.
+ Doing the intiall reserach on the complete application development.
+
+
 Sidhartha Gundarapu
 
 - Hi, I'm pursuing my graduation in Applied Computer Science at NWMSU. I am excited for the above stated mobile application development. My role in the project to schedule the team meetings, checking the updates regarding the project, as well as following the project development processes(SDLC or Agile) and dividing the project into sprints for ease development. And doing research about new technologies useful for the project.
