@@ -15,10 +15,9 @@ We have added the project title as the "Nursing symposium"
 
 Anakapalli Kanaka Venkata Phaneendra Babu
 
- I have an experience in automotive domain, have familiarized with the java concepts in the first semester and persuring the SWIFT(IOS) in the current semester.
- Doing the intiall reserach on the complete application development.
- 
- Conducted the meetings in the library as the inital discussion and seggregated the topics.
+ - I have an experience in automotive domain, have familiarized with the java concepts in the first semester and persuring the SWIFT(IOS in the current semester.
+ - Doing the intiall reserach on the complete application development.
+ - Conducted the meetings in the library as the inital discussion and seggregated the topics.
 
 
 Sidhartha Gundarapu
@@ -29,11 +28,9 @@ Sidhartha Gundarapu
 
 Phani Padhmanabha Naidu Ratnala
 
-  Hello,I have hands on experience on front end development.My role in this project will be in front end user interface designing also will share my helping hand for my team mates in all the other areas for developing the mobile application.
-  
-  Currently,I'm pursuing my masters in applied Computer Science at Northwest Missouri State University.
-  
-  GDP is an oppurtunity to learn new things like how a team works and to conduct my roles and responsibilites as per the requirements of the project.
+ - Hello,I have hands on experience on front end development.My role in this project will be in front end user interface designing also will share my helping hand for my team mates in all the other areas for developing the mobile application.
+ - Currently,I'm pursuing my masters in applied Computer Science at Northwest Missouri State University.
+ - GDP is an oppurtunity to learn new things like how a team works and to conduct my roles and responsibilites as per the requirements of the project.
 
 Alexander Dieringer
 
