@@ -11,6 +11,12 @@ We have added the project title as the "Nursing symposium"
 
 ---
 
+### Project Lifecycle
+
+- 8/31/22 - Coordinated meeting with client, and secondary meeting with other group in order to prepare for client meeting.
+
+---
+
 ### Our Team
 
 Anakapalli Kanaka Venkata Phaneendra Babu
