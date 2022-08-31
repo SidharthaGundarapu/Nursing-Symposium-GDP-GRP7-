@@ -13,8 +13,12 @@ We have added the project title as the "Nursing symposium"
 
 ### Project Lifecycle
 
-- 8/29/22 - Created a [meetings folder](/Meetings/) to hold minutes/descriptions of the meetings we have together & with the client.
-- 8/31/22 - Coordinated meeting with client, and secondary meeting with other group in order to prepare for client meeting.
+- 8/29/22 - Meetings Folder
+    - Created a [meetings folder](/Meetings/) to hold meeting minutes/descriptions.
+- 8/31/22 - Coordination & Mockups
+    - Coordinated meeting with client
+    - Set up meeting with other design group for client prep
+    - Created a [mockups folder](/Mockups/) to hold app design mockups.
 
 ---
 
