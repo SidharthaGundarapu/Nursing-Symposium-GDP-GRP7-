@@ -11,6 +11,21 @@ We have added the project title as the "Nursing symposium"
 
 ---
 
+### Project Navigation
+
+Table of Contents
+ - [Meeting Notes & Minutes](/Meetings/)
+    - [Most Recent Minutes](/Meetings/minutes_8_25.md)
+    - [Most Recent Weekly Standup Notes](/Meetings/SU%20Meeting%201.xlsx) - Excel
+ - [App Design Mockups (Visuals)](/Mockups/)
+ - [Project Code]
+ - Design Documentation
+    - [Current Project Requirements]
+    - [Initial Requirements & Functionalities]
+    - [Initial Proposal Reaction](application_propopsal.md)
+
+---
+
 ### Project Lifecycle
 
 - 8/29/22 - Meetings Folder
