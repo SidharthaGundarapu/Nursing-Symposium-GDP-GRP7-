@@ -23,6 +23,7 @@ Table of Contents
     - [Current Project Requirements]
     - [Initial Requirements & Functionalities]
     - [Initial Proposal Reaction](application_propopsal.md)
+ - [Team Biography](#our-team)
 
 ---
 
