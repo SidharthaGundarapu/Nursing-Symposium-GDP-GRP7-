@@ -13,7 +13,6 @@ We have added the project title as the "Nursing symposium"
 
 ### Project Navigation
 
-Table of Contents
  - [Meeting Notes & Minutes](/Meetings/)
     - [Most Recent Minutes](/Meetings/minutes_8_25.md)
     - [Most Recent Weekly Standup Notes](/Meetings/SU%20Meeting%201.xlsx) - Excel
