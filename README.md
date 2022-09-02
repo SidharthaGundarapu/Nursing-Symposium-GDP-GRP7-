@@ -61,4 +61,9 @@ Phani Padhmanabha Naidu Ratnala
 Alexander Dieringer
 
 - Hi, I'm a CS Graduate Student at NWMSU with both front & back end experience.  I enjoy the development process in general, as well as the planning and organizational aspects of project development.  My role in our project is to help withmore of the back end for our application, though I will potentially be helping in other areas.
+-----------------------------------------------------------------------------
+09/02/2022
 
+@ Anakapalli Kanaka Venkata Phaneendra babu
+1. Have attended the Client meeting and listed the functionalites
+2. Working on the existing api and studying to understand
