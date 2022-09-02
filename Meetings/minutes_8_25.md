@@ -1,4 +1,4 @@
-# Meeting Minutes - 8/24/26
+# Meeting Minutes - 8/25/26
 
 ### General Topics
 ---
