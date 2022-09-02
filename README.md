@@ -54,13 +54,6 @@ Sidhartha Gundarapu
 
 Phani Padhmanabha Naidu Ratnala
 
-<<<<<<< HEAD
-Alexander Dieringer
-
-# Bio @Phaneendra
- I have an experience in automotive domain, have familiarized with the java concepts in the first semester and persuring the SWIFT(IOS) in the current semester.
- Doing the intiall reserach on the complete application development.
-=======
  - Hello,I have hands on experience on front end development.My role in this project will be in front end user interface designing also will share my helping hand for my team mates in all the other areas for developing the mobile application.
  - Currently,I'm pursuing my masters in applied Computer Science at Northwest Missouri State University.
  - GDP is an oppurtunity to learn new things like how a team works and to conduct my roles and responsibilites as per the requirements of the project.
@@ -68,4 +61,4 @@ Alexander Dieringer
 Alexander Dieringer
 
 - Hi, I'm a CS Graduate Student at NWMSU with both front & back end experience.  I enjoy the development process in general, as well as the planning and organizational aspects of project development.  My role in our project is to help withmore of the back end for our application, though I will potentially be helping in other areas.
->>>>>>> 495ff0011c668c8f7afea8848797be32ea9060c0
+
