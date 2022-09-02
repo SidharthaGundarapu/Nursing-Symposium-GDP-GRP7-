@@ -67,3 +67,5 @@ Alexander Dieringer
 @ Anakapalli Kanaka Venkata Phaneendra babu
 1. Have attended the Client meeting and listed the functionalites
 2. Working on the existing api and studying to understand
+3. Working on the preparation of layouts for the prototype presentation.
+4. Started the documentation task for the application devlopment
