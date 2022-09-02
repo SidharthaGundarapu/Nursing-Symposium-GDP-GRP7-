@@ -69,3 +69,4 @@ Alexander Dieringer
 2. Working on the existing api and studying to understand
 3. Working on the preparation of layouts for the prototype presentation.
 4. Started the documentation task for the application devlopment
+5. started the tutorials for the application development
