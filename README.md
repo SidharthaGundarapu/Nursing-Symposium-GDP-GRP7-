@@ -70,3 +70,6 @@ Alexander Dieringer
 3. Working on the preparation of layouts for the prototype presentation.
 4. Started the documentation task for the application devlopment
 5. started the tutorials for the application development
+
+@ Phani Padmanabha Naidu Ratnala
+1) Mainly this week we attended the client meeting and we had good interaction also known the requirements about the project.
