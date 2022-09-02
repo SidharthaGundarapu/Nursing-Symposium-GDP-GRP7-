@@ -74,3 +74,4 @@ Alexander Dieringer
 @ Phani Padmanabha Naidu Ratnala
 1) Mainly this week we attended the client meeting and we had good interaction also known the requirements about the project.
 2) Started working on the user interface and preparation of layouts.
+3) Studying on the existing API's for the discussed features.
