@@ -6,4 +6,82 @@
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity">
 
+    <EditText
+        android:id="@+id/registerText_firstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:ems="10"
+        android:hint="FirstName"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/registerText_lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="LastName"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/registerText_firstName"
+        app:layout_constraintStart_toStartOf="@+id/registerText_firstName"
+        app:layout_constraintTop_toBottomOf="@+id/registerText_firstName" />
+
+    <EditText
+        android:id="@+id/registerText_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/registerText_lastName"
+        app:layout_constraintStart_toStartOf="@+id/registerText_lastName"
+        app:layout_constraintTop_toBottomOf="@+id/registerText_lastName" />
+
+    <Button
+        android:id="@+id/registerSubmitBTN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:onClick="onRegisterBtnClick"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="@+id/registerText_email"
+        app:layout_constraintStart_toStartOf="@+id/registerText_email"
+        app:layout_constraintTop_toBottomOf="@+id/registerText_email" />
+
+    <TextView
+        android:id="@+id/registerValidationTXT_firstName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="First Name"
+        app:layout_constraintEnd_toEndOf="@+id/registerSubmitBTN"
+        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintStart_toStartOf="@+id/registerSubmitBTN"
+        app:layout_constraintTop_toBottomOf="@+id/registerSubmitBTN" />
+
+    <TextView
+        android:id="@+id/registerValidationTXT_lastName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Last Name"
+        app:layout_constraintEnd_toEndOf="@+id/registerValidationTXT_firstName"
+        app:layout_constraintStart_toStartOf="@+id/registerValidationTXT_firstName"
+        app:layout_constraintTop_toBottomOf="@+id/registerValidationTXT_firstName" />
+
+    <TextView
+        android:id="@+id/registerValidationTXT_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Email"
+        app:layout_constraintEnd_toEndOf="@+id/registerValidationTXT_lastName"
+        app:layout_constraintStart_toStartOf="@+id/registerValidationTXT_lastName"
+        app:layout_constraintTop_toBottomOf="@+id/registerValidationTXT_lastName" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
