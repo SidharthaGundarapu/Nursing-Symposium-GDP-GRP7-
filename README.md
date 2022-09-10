@@ -81,3 +81,4 @@ Alexander Dieringer
 @ Siddhartha
 1. Have created the events activity in the android studio and started working with it 
 2. Created few of the views and iterating on the layout
+3. Working on the diffrent methods for the connection part
