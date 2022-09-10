@@ -75,3 +75,9 @@ Alexander Dieringer
 1) Mainly this week we attended the client meeting and we had good interaction also known the requirements about the project.
 2) Started working on the user interface and preparation of layouts.
 3) Studying on the existing API's for the discussed features.
+
+-----------------------------------------
+09/09/2022
+@ Siddhartha
+1. Have created the events activity in the android studio and started working with it 
+2. Created few of the views and iterating on the layout
