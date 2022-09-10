@@ -83,3 +83,7 @@ Alexander Dieringer
 2. Created few of the views and iterating on the layout
 3. Working on the diffrent methods for the connection part
 4. Simultaneously working on the database prototype development.
+
+@ Phani padmanabaha Naidu
+1. Started the login activity in the android studio
+2. Working of the adjusting views and prepare a proper layout
