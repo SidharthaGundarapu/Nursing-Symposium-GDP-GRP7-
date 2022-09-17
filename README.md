@@ -88,4 +88,5 @@ Alexander Dieringer
 1. Started the login activity in the android studio
 2. Working of the adjusting views and prepare a proper layout
 3. Working on the java backend code for the connnections
-4. Developing the database logics and tables.
+4. Developing the database logics and tables.'
+5. [link for Reference](https://webflow.com/design/nursing-symposium)
