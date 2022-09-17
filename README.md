@@ -90,3 +90,38 @@ Alexander Dieringer
 3. Working on the java backend code for the connnections
 4. Developing the database logics and tables.'
 5. [link for Reference](https://webflow.com/design/nursing-symposium)
+6. Developed reference login page and written code for it.
+7. <!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="app-version"><meta name="_csrf" href="/manifest.json"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#3490eb"><link rel="stylesheet"> <title>Webflow - Nursing Symposium</title><link rel="icon" 
+var source = 'designer';
+var hostUrl = 'https://webflow.com';
+var authenticated = Boolean();
+var forceFalse = false;
+// authenticated users
+switch (source) {
+  case 'dashboard':
+    if (!authenticated) {
+      initCallbacks();
+      loadIpStack();
+    }
+    break;
+  case 'designer-preview':
+    initCallbacks();
+    isAuthenticated(function(authenticated) {
+      if (!authenticated) {
+        loadIpStack();
+      } else {
+        // Needed to resolve wf_isEU
+        forceFalse = true;
+      }
+    });
+    break;
+}
+
+function initCallbacks() {
+  window.wf_onDetectContinent = function(data) { 
+    window.wf_continentCode = data.continent_code; 
+    window.wf_userLocation = {
+      country_code: data.country_code,
+      city: data.city
+    }
+  };
