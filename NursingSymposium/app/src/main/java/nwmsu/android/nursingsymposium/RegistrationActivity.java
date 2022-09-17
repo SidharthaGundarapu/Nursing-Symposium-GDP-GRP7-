@@ -32,6 +32,10 @@ public class RegistrationActivity extends AppCompatActivity {
             myValidationText += "First Name is not valid\n";
             txtFirstName.setText(myValidationText);
         }
+        if( !isNameValid( editTxtLastName.getText().toString())) {
+            myValidationText += "Last Name is not valid\n";
+            txtFirstName.setText(myValidationText);
+        }
 
 
 
