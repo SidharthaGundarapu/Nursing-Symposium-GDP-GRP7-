@@ -37,19 +37,23 @@ public class RegistrationActivity extends AppCompatActivity {
             txtFirstName.setText(myValidationText);
         }
 
+        if( !isEmailValid( editTxtEmail.getText().toString())) {
+            myValidationText += "Email is not a valid email\n";
+            txtFirstName.setText(myValidationText);
+        }
+        if( !myValidationText.equals("")) {
+            txtValidation.setText( "Data cannot be empty");
+        }
 
-
-
-
-
-
-
-
-
+        
 
     }
 
     public boolean isNameValid( String myString) {
+        return true;
+    }
+
+    public boolean isEmailValid( String myString) {
         return true;
     }
 
