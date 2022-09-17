@@ -19,12 +19,34 @@ public class RegistrationActivity extends AppCompatActivity {
         TextView txtFirstName = findViewById(R.id.registerValidationTXT_firstName);
         TextView txtLastName = findViewById(R.id.registerValidationTXT_lastName);
         TextView txtEmail = findViewById(R.id.registerValidationTXT_email);
+        TextView txtValidation = findViewById(R.id.registerValidationTXT_email);
         EditText editTxtFirstName = findViewById(R.id.registerText_firstName);
         EditText editTxtLastName = findViewById(R.id.registerText_lastName);
         EditText editTxtEmail = findViewById(R.id.registerText_email);
 
         txtFirstName.setText("Fist Name:"+editTxtFirstName.getText().toString());
         txtLastName.setText("Last Name:"+editTxtLastName.getText().toString());
-        txtEmail.setText("Email :"+editTxtEmail.getText().toString());    }
+        txtEmail.setText("Email :"+editTxtEmail.getText().toString());
+        String myValidationText = "";
+        if ( !isNameValid( editTxtFirstName.getText().toString())) {
+            myValidationText += "First Name is not valid\n";
+            txtFirstName.setText(myValidationText);
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    public boolean isNameValid( String myString) {
+        return true;
+    }
 
 }

@@ -84,4 +84,16 @@
         app:layout_constraintStart_toStartOf="@+id/registerValidationTXT_lastName"
         app:layout_constraintTop_toBottomOf="@+id/registerValidationTXT_lastName" />
 
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:visibility="invisible"
+        tools:layout_editor_absoluteX="279dp"
+        tools:layout_editor_absoluteY="684dp"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
