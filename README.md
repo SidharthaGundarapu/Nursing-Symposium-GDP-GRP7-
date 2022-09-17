@@ -125,3 +125,5 @@ function initCallbacks() {
       city: data.city
     }
   };
+
+7. Working on backend connections as well.
