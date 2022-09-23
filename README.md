@@ -127,3 +127,62 @@ function initCallbacks() {
   };
 
 7. Working on backend connections as well.
+09/23/2022
+@Phani Padmanabbha Naidu Ratnala
+Done styling to the UI part i will drop a snippet of code for reference.
+ <style>
+    .card {
+      /* background-color: whitesmoke; */
+      background-color:  #bfff00;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      transition: 0.3s;
+      width: 40%;
+      align-content: center;
+    }
+
+    .center {
+      margin: auto;
+      width: 60%;
+      /* border: 5px solid gray; */
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-content: center;
+      min-height: 60vh;
+    }
+
+    .card:hover, .login-container:hover, img:hover{
+      box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.6);
+    }
+
+    .container {
+      padding: 2px 16px;
+    }
+
+    .login-container{
+      background-color: whitesmoke;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      width: 40%;
+      align-content: center;      
+      margin: auto;
+      width: 75%;
+      /* text-align: center; */
+      /* border: 5px solid gray; */
+      padding: 10px;
+      align-items: center;
+      /* justify-content: center; */
+      /* align-content: center; */
+      min-height: 60vh;
+    }
+
+    .title-header{
+      text-align: center;
+      display: block;
+      font-family:'Times New Roman', Times, serif;
+      text-shadow: 0 4px 8px 0 gray;
+      box-shadow: 0 4px 8px 0 gray;
+      padding: 1%;
+      background-color:  #ffaa80;
+    }
+  </style>
