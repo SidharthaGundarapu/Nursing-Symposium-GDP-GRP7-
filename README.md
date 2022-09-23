@@ -188,3 +188,4 @@ Done styling to the UI part i will drop a snippet of code for reference.
   </style>
 8. Updates of this week
  we had client meeting and known their requirements.
+9. we need to construct full stretch of database and connections for backend.
