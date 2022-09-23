@@ -186,3 +186,5 @@ Done styling to the UI part i will drop a snippet of code for reference.
       background-color:  #ffaa80;
     }
   </style>
+8. Updates of this week
+ we had client meeting and known their requirements.
