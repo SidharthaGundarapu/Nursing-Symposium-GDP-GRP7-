@@ -1,0 +1,15 @@
+Team-meeting notes:
+[https://webflow.com/design/nursing-symposium]
+1)The above link is the demo of our Ui view for the mobile application.
+2)But after the changes as per the client requirement's and to maintain
+the consistency between the two OS version like Android and IOS a new design
+has been finalized by both teams after the team meeting and so, it is going
+to beimplemented.
+3)Whereas coming to the Backend and fuctionalities part the application is still 
+under development as it is a static page there is a confusion in the buttons which
+to be given functionality or not.
+4)The Database has a point that the demo has been tried and presented in form of the
+images as attachments.But now we have an accurate schema diagram it made easy for the 
+design of the database easy.As an addition we have got help from the IT cell of
+the NWMSU by storing the database on a server which makes creation, storage, retrieval of
+database easy.
