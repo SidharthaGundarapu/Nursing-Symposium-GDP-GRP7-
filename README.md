@@ -192,3 +192,5 @@ Done styling to the UI part i will drop a snippet of code for reference.
 @Anakapalli Phaneendra Babu
 1. Working on the designing of the data base schema
 2. Studying desing architecture for the applicaiton development
+3. Studying the activity to activity migration in the android studio and refering to the tutorials.
+4. Looking at the "Back4App" working through some tutorials
