@@ -28,16 +28,16 @@ public class RegistrationActivity extends AppCompatActivity {
         txtLastName.setText("Last Name:"+editTxtLastName.getText().toString());
         txtEmail.setText("Email :"+editTxtEmail.getText().toString());
         String myValidationText = "";
-        if ( !isNameValid( editTxtFirstName.getText().toString())) {
+        if ( !verifyFastName( editTxtFirstName.getText().toString())) {
             myValidationText += "First Name is not valid\n";
             txtFirstName.setText(myValidationText);
         }
-        if( !isNameValid( editTxtLastName.getText().toString())) {
+        if( !verifyLastName( editTxtLastName.getText().toString())) {
             myValidationText += "Last Name is not valid\n";
             txtFirstName.setText(myValidationText);
         }
 
-        if( !isEmailValid( editTxtEmail.getText().toString())) {
+        if( !verifyEmail( editTxtEmail.getText().toString())) {
             myValidationText += "Email is not a valid email\n";
             txtFirstName.setText(myValidationText);
         }
@@ -45,16 +45,53 @@ public class RegistrationActivity extends AppCompatActivity {
             txtValidation.setText( "Data cannot be empty");
         }
 
-        
+
 
     }
 
-    public boolean isNameValid( String myString) {
+  /*
+  Last Name verification
+   */
+    private boolean verifyLastName(String lname)
+    {
+        lname = lname.trim();
+
+        if(lname == null || lname.equals(""))
+            return false;
+
+        if(!lname.matches("[a-zA-Z]*"))
+            return false;
+
         return true;
     }
+    /*
+    Fast Name verification
+     */
+    private boolean verifyFastName(String fname)
+    {
+        fname = fname.trim();
 
-    public boolean isEmailValid( String myString) {
+        if(fname == null || fname.equals(""))
+            return false;
+
+        if(!fname.matches("[a-zA-Z]*"))
+            return false;
+
         return true;
     }
+    /*
+     Email verification
+     */
+    private boolean verifyEmail(String email)
+    {
+        email = email.trim();
 
+        if(email == null || email.equals(""))
+            return false;
+
+        if(!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"))
+            return false;
+
+        return true;
+    }
 }

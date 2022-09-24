@@ -92,8 +92,8 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:visibility="invisible"
-        tools:layout_editor_absoluteX="279dp"
-        tools:layout_editor_absoluteY="684dp"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="617dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
