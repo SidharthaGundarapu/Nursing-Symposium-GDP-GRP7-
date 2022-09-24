@@ -189,3 +189,6 @@ Done styling to the UI part i will drop a snippet of code for reference.
 8. Updates of this week
  we had client meeting and known their requirements.
 9. we need to construct full stretch of database and connections for backend.
+@Anakapalli Phaneendra Babu
+1. Working on the designing of the data base schema
+2. Studying desing architecture for the applicaiton development
