@@ -16,3 +16,7 @@ are clarified which are in the notes.
 2)We have got aware about a final and consistent layout for the UI of the Nursing conference Android application.
 3)Also got a free hand of that a server will be hosted by the IT department of the Northwest Missouri state universityfor the storage as well as the hosting of database.
 4)Whereas both teams are working consistently on our respective OS applictions for further progress.
+[Updates: 09/30/2022]
+1) Gave a presentation for the workshop.
+2) Have used firebase database temporarily for the creatrion of the database for few users to prepare a prototype which can be shown to the client.
+3) Later on the SQLite will be used to prepare the centralized database for creation, retrieval and its integration to UI using the API's.
