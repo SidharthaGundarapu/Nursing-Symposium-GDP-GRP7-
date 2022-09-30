@@ -1,97 +1,102 @@
-package nwmsu.android.nursingsymposium;
+package com.example.nursingsymposium;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class RegistrationActivity extends AppCompatActivity {
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputEditText;
+
+
+public class RegisterActivity extends AppCompatActivity {
+
+    TextView login_back;
+    TextInputEditText id_name, id_username, id_password, id_confirmpassword;
+    Button register_btn;
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
-    }
-    public void onRegisterBtnClick(View view)
-    {
-        TextView txtFirstName = findViewById(R.id.registerValidationTXT_firstName);
-        TextView txtLastName = findViewById(R.id.registerValidationTXT_lastName);
-        TextView txtEmail = findViewById(R.id.registerValidationTXT_email);
-        TextView txtValidation = findViewById(R.id.registerValidationTXT_email);
-        EditText editTxtFirstName = findViewById(R.id.registerText_firstName);
-        EditText editTxtLastName = findViewById(R.id.registerText_lastName);
-        EditText editTxtEmail = findViewById(R.id.registerText_email);
+        setContentView(R.layout.activity_register);
+        login_back = findViewById(R.id.login_back);
+        id_name = findViewById(R.id.id_name);
+        id_username = findViewById(R.id.id_username);
+        id_password = findViewById(R.id.id_password);
+        id_confirmpassword = findViewById(R.id.id_confirmpassword);
+        register_btn = findViewById(R.id.register_btn);
 
-        txtFirstName.setText("Fist Name:"+editTxtFirstName.getText().toString());
-        txtLastName.setText("Last Name:"+editTxtLastName.getText().toString());
-        txtEmail.setText("Email :"+editTxtEmail.getText().toString());
-        String myValidationText = "";
-        if ( !verifyFastName( editTxtFirstName.getText().toString())) {
-            myValidationText += "First Name is not valid\n";
-            txtFirstName.setText(myValidationText);
-        }
-        if( !verifyLastName( editTxtLastName.getText().toString())) {
-            myValidationText += "Last Name is not valid\n";
-            txtFirstName.setText(myValidationText);
-        }
+        register_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = id_name.getText().toString();
+                String username = id_username.getText().toString();
+                String pass = id_password.getText().toString();
+                String confirmpass = id_confirmpassword.getText().toString();
 
-        if( !verifyEmail( editTxtEmail.getText().toString())) {
-            myValidationText += "Email is not a valid email\n";
-            txtFirstName.setText(myValidationText);
-        }
-        if( !myValidationText.equals("")) {
-            txtValidation.setText( "Data cannot be empty");
-        }
+                if (TextUtils.isEmpty(name)) {
+                    Toast.makeText(RegisterActivity.this, "Enter name", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(username)) {
+                    Toast.makeText(RegisterActivity.this, "Enter Username", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(pass)) {
+                    Toast.makeText(RegisterActivity.this, "Enter password", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(confirmpass)) {
+                    Toast.makeText(RegisterActivity.this, "Enter confirmpassword", Toast.LENGTH_SHORT).show();
+                } else if ((pass.equals(confirmpass))) {
+                    try {
+                        progressDialog = new ProgressDialog(RegisterActivity.this);
+                        progressDialog.setMessage("Loading....");
+                        progressDialog.show();
 
 
+                        FirebaseAuth.getInstance().createUserWithEmailAndPassword(username, pass).addOnCompleteListener(
+                                new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        progressDialog.cancel();
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(RegisterActivity.this, "Registration Succesfull", Toast.LENGTH_SHORT).show();
 
-    }
+                                            try {
+                                                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                                                DatabaseReference myRef = database.getReference("UserDetails").child("Student");
+                                                String studentID = FirebaseAuth.getInstance().getUid();
+                                                RegistrationModel registrationModel = new RegistrationModel(name, username, pass);
+                                                myRef.child(studentID).setValue(registrationModel);
 
-  /*
-  Last Name verification
-   */
-    private boolean verifyLastName(String lname)
-    {
-        lname = lname.trim();
+                                                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                                                startActivity(intent);
+                                                finish();
 
-        if(lname == null || lname.equals(""))
-            return false;
+                                            } catch (Exception e) {
 
-        if(!lname.matches("[a-zA-Z]*"))
-            return false;
+                                            }
+                                        } else {
+                                            Toast.makeText(RegisterActivity.this, "Registration UnSuccesfull", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                }
+                        );
 
-        return true;
-    }
-    /*
-    Fast Name verification
-     */
-    private boolean verifyFastName(String fname)
-    {
-        fname = fname.trim();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                } else {
+                    Toast.makeText(RegisterActivity.this, "Password Mismatch", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
-        if(fname == null || fname.equals(""))
-            return false;
-
-        if(!fname.matches("[a-zA-Z]*"))
-            return false;
-
-        return true;
-    }
-    /*
-     Email verification
-     */
-    private boolean verifyEmail(String email)
-    {
-        email = email.trim();
-
-        if(email == null || email.equals(""))
-            return false;
-
-        if(!email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$"))
-            return false;
-
-        return true;
+       
     }
 }
