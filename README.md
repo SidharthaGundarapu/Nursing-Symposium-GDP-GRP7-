@@ -194,3 +194,4 @@ Done styling to the UI part i will drop a snippet of code for reference.
 2. Studying desing architecture for the applicaiton development
 3. Studying the activity to activity migration in the android studio and refering to the tutorials.
 4. Looking at the "Back4App" working through some tutorials
+Our Workshop PPT Link: https://nwmissouri-my.sharepoint.com/:p:/g/personal/s546980_nwmissouri_edu/EaUA4XcZZDROrSFLOLUR-nYBMCLAL7_3Ulbaiyy3EHlHEw?e=Yofmgj 
