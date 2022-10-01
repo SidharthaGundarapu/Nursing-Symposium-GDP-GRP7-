@@ -17,7 +17,7 @@ We have added the project title as the "Nursing symposium"
     - [Most Recent Minutes](/Meetings/minutes_8_25.md)
     - [Most Recent Weekly Standup Notes](/Meetings/SU%20Meeting%201.xlsx) - Excel
  - [App Design Mockups (Visuals)](/Mockups/)
- - [Project Code]
+ - [Project Code](/NursingSymposium/)
  - Design Documentation
     - [Current Project Requirements]
     - [Initial Requirements & Functionalities]
@@ -34,6 +34,12 @@ We have added the project title as the "Nursing symposium"
     - Coordinated meeting with client
     - Set up meeting with other design group for client prep
     - Created a [mockups folder](/Mockups/) to hold app design mockups.
+
+### TODO
+ - Reorganize the readme.
+ - Move appropriate data to wiki from readme (like project updates)
+ - Update the kanban board
+ - Update the links and project lifecycle
 
 ---
 
