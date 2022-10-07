@@ -20,3 +20,8 @@ are clarified which are in the notes.
 1) Gave a presentation for the workshop.
 2) Have used firebase database temporarily for the creatrion of the database for few users to prepare a prototype which can be shown to the client.
 3) Later on the SQLite will be used to prepare the centralized database for creation, retrieval and its integration to UI using the API's.
+[Updates: 10/07/2022]
+1) Gave a presentation for the midterm-1.
+2) The UI protoype demo including the login and registration was shown to the client and got her review.
+3) Also got clarity about the Navigation tabs have been discussed in the client meeting on wednesday (10/05/2022;03:00 to 04:00 pm).
+4) Designed a standard database schema diagram and few features and attributes are in progress to add and modified afterwards.
