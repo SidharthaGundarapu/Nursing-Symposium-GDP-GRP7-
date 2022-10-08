@@ -1,0 +1,7 @@
+private void getData() {
+        arrayList=new ArrayList<>();
+        arrayList.add(new ConferenceModel("Lungs","California","5:40"));
+        arrayList.add(new ConferenceModel("Heart","sanfransisco","2:20"));
+        arrayList.add(new ConferenceModel("Liver","newyork","6:40"));
+        arrayList.add(new ConferenceModel("Brain","austin","3:20"));
+    }
