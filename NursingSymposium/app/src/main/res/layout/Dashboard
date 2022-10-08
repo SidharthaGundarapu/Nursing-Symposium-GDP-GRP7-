@@ -5,3 +5,9 @@ private void getData() {
         arrayList.add(new ConferenceModel("Liver","newyork","6:40"));
         arrayList.add(new ConferenceModel("Brain","austin","3:20"));
     }
+    public void onClick(View view) {
+
+                Intent intent = new Intent(DashBoardActivity.this, LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            
+            }
