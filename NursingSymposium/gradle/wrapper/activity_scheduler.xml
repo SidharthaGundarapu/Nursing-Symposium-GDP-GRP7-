@@ -15,3 +15,15 @@
         android:layout_margin="@dimen/_10sdp"
         android:weightSum="2"
         android:layout_height="@dimen/_120sdp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:text="About Speaker"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:textSize="@dimen/_12sdp"
+            android:gravity="center"
+            android:layout_height="match_parent"/>
