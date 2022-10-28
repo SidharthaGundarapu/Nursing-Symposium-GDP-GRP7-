@@ -29,3 +29,5 @@ are clarified which are in the notes.
 [Updates: 10/28/2022]
 1) There is a major change in the database to be used in the project as the SQLite database is an embeded one and it does not support the web point based application.
 2) Moreover it just supports only few amount of the information that can be stored in the mobile device memory or database.
+3) As our bravo team along with the alpha team have contacted the university department for the database server to host our application and store the data.
+4) And, sucessfully we have got the permission as well as the credentials to establish a database in a very safe and secure environment.
