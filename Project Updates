@@ -26,3 +26,6 @@ are clarified which are in the notes.
 3) Also got clarity about the Navigation tabs have been discussed in the client meeting on wednesday (10/05/2022;03:00 to 04:00 pm).
 4) Designed a standard database schema diagram and few features and attributes are in progress to add and modified afterwards.
 5) We are using the SQLite version of 3.12.2 which is the latest version.
+[Updates: 10/28/2022]
+1) There is a major change in the database to be used in the project as the SQLite database is an embeded one and it does not support the web point based application.
+2) Moreover it just supports only few amount of the information that can be stored in the mobile device memory or database.
