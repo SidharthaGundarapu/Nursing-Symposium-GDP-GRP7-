@@ -3,18 +3,24 @@ package nwmsu.android.conferenceapp.ui.tools;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 import nwmsu.android.conferenceapp.MainActivity;
 import nwmsu.android.conferenceapp.R;
-import nwmsu.android.conferenceapp.StaffActivity;
+import nwmsu.android.conferenceapp.databinding.FragmentToolsBinding;
+import nwmsu.android.conferenceapp.ui.tools.ToolsViewModel;
 
 public class ToolsFragment extends Fragment {
+
+    private FragmentToolsBinding binding;
 
     public ToolsFragment() {
         // Required empty public constructor
@@ -33,13 +39,18 @@ public class ToolsFragment extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_tools, container, false);
-        // Find the swap button
-        Button userSwapBTN = (Button) getView().findViewById( R.id.userSwapBTN);
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        ToolsViewModel toolsViewModel =
+                new ViewModelProvider(this).get(ToolsViewModel.class);
+
+        binding = FragmentToolsBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+
+        final TextView textView = binding.textTools;
+        toolsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+
+        Button userSwapBTN = (Button) root.findViewById( R.id.userSwapBTN);
         userSwapBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +59,7 @@ public class ToolsFragment extends Fragment {
                 startActivity( swapIntent);
             }
         });
-        return view;
+
+        return root;
     }
 }

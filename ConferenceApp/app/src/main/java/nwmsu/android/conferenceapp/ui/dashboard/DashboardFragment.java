@@ -12,7 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import nwmsu.android.conferenceapp.MainActivity;
 import nwmsu.android.conferenceapp.R;
 import nwmsu.android.conferenceapp.StaffActivity;
 import nwmsu.android.conferenceapp.databinding.FragmentDashboardBinding;
@@ -32,7 +31,7 @@ public class DashboardFragment extends Fragment {
         final TextView textView = binding.textDashboard;
         dashboardViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        Button staffSwapBTN = (Button) getView().findViewById( R.id.staffSwapBTN);
+        Button staffSwapBTN = (Button) root.findViewById( R.id.staffSwapBTN);
         staffSwapBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +40,7 @@ public class DashboardFragment extends Fragment {
                 startActivity( swapIntent);
             }
         });
+
         return root;
     }
 
