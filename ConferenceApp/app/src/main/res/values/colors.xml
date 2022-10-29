@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Theme related colors -->
+    <color name="ncf_teal">#0CD8D8</color>
+    <color name="ncf_dark_teal">#068585</color>
+    <color name="ncf_teal_var">#24AEAE</color>
+    <color name="ncf_dark_teal_var">#135E5E</color>
+    <color name="ncf_pink">#DF0797</color>
+    <color name="ncf_pink_var">#970465</color>
+    <color name="ncf_gold">#DDAF24</color>
+    <color name="ncf_gold_var">#C69603</color>
 </resources>
