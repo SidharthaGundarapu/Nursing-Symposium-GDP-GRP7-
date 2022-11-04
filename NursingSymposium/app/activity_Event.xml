@@ -15,7 +15,7 @@
         android:id="@+id/text_conference"
         android:layout_height="wrap_content"/>
 
-        <ImageView
+    <ImageView
     android:layout_width="match_parent"
     android:id="@+id/conference_image"
     android:scaleType="fitXY"
@@ -40,3 +40,15 @@
             android:layout_marginLeft="@dimen/_5sdp"
             android:textColor="@color/black"
             android:textSize="@dimen/_16sdp
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conference_image"
+            android:layout_height="wrap_content"/><TextView
+            android:layout_width="wrap_content"
+            android:text="Speaker: "
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sdp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/conference_name"
+            android:layout_height="wrap_content"/>
