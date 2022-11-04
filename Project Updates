@@ -32,3 +32,6 @@ are clarified which are in the notes.
 3) As our bravo team along with the alpha team have contacted the university department for the database server to host our application and store the data.
 4) And, sucessfully we have got the permission as well as the credentials to establish a database in a very safe and secure environment.
 5) Finally due to the health issue of mine i was not able to focus on the project but we are planning to complete with in time and we are getting prepared for the workshop next week.
+[Updates: 11/04/2022]
+1) Have sucessfully established the connection of server to our local device and we are going to design the datbase for application using the PostgreSQl-15.0.
+2) Add the functionalities to the UI and the retrieval of the data from database.
