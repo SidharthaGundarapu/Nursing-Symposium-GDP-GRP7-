@@ -4,12 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/S503330/Documents/Course History Fall 22/GDP1/GDP-GRP7/NursingSymposium/app/src/main/res/layout/activity_login.xml" value="0.21875" />
+<<<<<<< Updated upstream
         <entry key="..\:/Users/S503330/Documents/Course History Fall 22/GDP1/GDP-GRP7/NursingSymposium/app/src/main/res/layout/activity_main.xml" value="0.2453125" />
         <entry key="..\:/Users/S503330/Documents/Course History Fall 22/GDP1/GDP-GRP7/NursingSymposium/app/src/main/res/layout/activity_registration.xml" value="0.259375" />
         <entry key="..\:/Users/S503330/Documents/Course History Fall 22/GDP1/GDP-GRP7/NursingSymposium/app/src/main/res/layout/fragment_dashboard.xml" value="0.259375" />
         <entry key="..\:/Users/S503330/Documents/Course History Fall 22/GDP1/GDP-GRP7/NursingSymposium/app/src/main/res/layout/fragment_more.xml" value="0.2453125" />
         <entry key="..\:/Users/S503330/Documents/Course History Fall 22/GDP1/GDP-GRP7/NursingSymposium/app/src/main/res/layout/fragment_sessions.xml" value="0.2453125" />
         <entry key="..\:/Users/S503330/Documents/Course History Fall 22/GDP1/GDP-GRP7/NursingSymposium/app/src/main/res/menu/bottom_navigation.xml" value="0.176" />
+=======
+        <entry key="..\:/Users/S546958/OneDrive - nwmissouri.edu/Desktop/webapps-repos/GDP-GRP7/NursingSymposium/app/src/main/res/layout/activity_registration.xml" value="0.16666666666666666" />
+>>>>>>> Stashed changes
         <entry key="..\:/Users/s546980/Documents/GitHub/GDP-GRP7/NursingSymposium/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Users/s546980/Documents/GitHub/GDP-GRP7/NursingSymposium/app/src/main/res/layout/activity_registration.xml" value="0.1796875" />
       </map>

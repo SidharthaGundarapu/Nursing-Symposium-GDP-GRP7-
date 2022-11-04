@@ -14,6 +14,7 @@
         android:ems="10"
         android:hint="FirstName"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +27,7 @@
         android:ems="10"
         android:hint="LastName"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/registerText_firstName"
         app:layout_constraintStart_toStartOf="@+id/registerText_firstName"
         app:layout_constraintTop_toBottomOf="@+id/registerText_firstName" />
@@ -38,6 +40,7 @@
         android:ems="10"
         android:hint="Email"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/registerText_lastName"
         app:layout_constraintStart_toStartOf="@+id/registerText_lastName"
         app:layout_constraintTop_toBottomOf="@+id/registerText_lastName" />
