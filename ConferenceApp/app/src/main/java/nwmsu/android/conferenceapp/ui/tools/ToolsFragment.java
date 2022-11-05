@@ -50,16 +50,6 @@ public class ToolsFragment extends Fragment {
         final TextView textView = binding.textTools;
         toolsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        Button userSwapBTN = (Button) root.findViewById( R.id.userSwapBTN);
-        userSwapBTN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Swap to the user actvitiy
-                Intent swapIntent = new Intent(getActivity(), MainActivity.class);
-                startActivity( swapIntent);
-            }
-        });
-
         return root;
     }
 

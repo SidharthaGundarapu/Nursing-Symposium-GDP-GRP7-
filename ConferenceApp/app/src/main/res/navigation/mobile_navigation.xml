@@ -23,4 +23,10 @@
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
 
+    <fragment
+        android:id="@+id/navigation_more"
+        android:name="nwmsu.android.conferenceapp.MoreItemFragment"
+        android:label="@string/title_destination"
+        tools:layout="@layout/fragment_moreitem_list" />
+
 </navigation>

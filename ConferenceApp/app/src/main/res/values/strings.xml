@@ -4,7 +4,8 @@
     <!-- MainActivity Fragments -->
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
-    <string name="title_more">Select Destination</string>
+    <string name="title_more">More</string>
+    <string name="title_destination">Select Destination</string>
     <string name="title_sessions">Sessions</string>
     <!-- MainActivity Sub-Frags -->
     <string name="title_schedule">My Schedule</string>
