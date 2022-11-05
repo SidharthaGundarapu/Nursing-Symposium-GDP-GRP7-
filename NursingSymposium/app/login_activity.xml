@@ -30,3 +30,9 @@
         android:layout_marginBottom="@dimen/_5sdp"
         app:layout_constraintTop_toBottomOf="@id/login_text"
         android:hint="username"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"><com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/id_username"
+            android:textColor="@color/black"
+            android:layout_height="wrap_content"
+            />
