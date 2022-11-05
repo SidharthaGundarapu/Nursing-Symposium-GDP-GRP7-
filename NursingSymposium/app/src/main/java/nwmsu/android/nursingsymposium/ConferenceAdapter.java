@@ -1,4 +1,4 @@
-package com.example.nursingsymposium;
+fdpackage com.example.nursingsymposium;
 
 
 import android.content.Intent;
