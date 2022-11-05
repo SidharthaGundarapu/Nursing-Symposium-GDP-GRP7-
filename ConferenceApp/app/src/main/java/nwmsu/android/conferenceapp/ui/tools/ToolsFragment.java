@@ -62,4 +62,10 @@ public class ToolsFragment extends Fragment {
 
         return root;
     }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
+    }
 }
