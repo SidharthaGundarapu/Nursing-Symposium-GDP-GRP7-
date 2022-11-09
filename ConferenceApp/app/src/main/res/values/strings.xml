@@ -1,19 +1,33 @@
 <resources>
     <string name="app_name">MAYO Nursing</string>
     <string name="app_staff">Staff Portal</string>
+
     <!-- MainActivity Fragments -->
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_more">More</string>
     <string name="title_destination">Select Destination</string>
     <string name="title_sessions">Sessions</string>
+
     <!-- MainActivity Sub-Frags -->
     <string name="title_schedule">My Schedule</string>
     <string name="title_notifications">Notifications</string>
+
     <!-- Staff Activity Fragments -->
     <string name="title_tools">Tools</string>
     <string name="title_statistics">Stats</string>
     <string name="title_staff_menu">More</string>
+
+    <!-- Placeholder/Default texts -->
+    <string name="placeholder_image">Image</string>
+    <string name="placeholder_sessions_name">Event Name</string>
+    <string name="placeholder_sessions_time">08:00 AM</string>
+    <string name="placeholder_sessions_description">Event Details</string>
+
+    <!-- Event Recycler View -->
+    <string name="rv_label_details">Event Details</string>
+    <string name="rv_label_rsvp">RSVP</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
