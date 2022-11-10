@@ -11,80 +11,97 @@
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
+        android:id="@+id/sessionContent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/idSessionIcon"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/recycler_content_height"
+            android:layout_height="@dimen/recycler_content_height"
+            android:paddingHorizontal="8dp"
+            android:layout_gravity="start|center_vertical"
             android:contentDescription="@string/placeholder_image"
             android:src="@mipmap/ic_launcher"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintEnd_toStartOf="@+id/idSessionDescription"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/idSessionName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:gravity="left"
-            android:text="@string/placeholder_sessions_name"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/idSessionTime"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/idSessionIcon"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+        <LinearLayout
+            android:id="@+id/grid_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:paddingLeft="8dp"
+            android:paddingTop="0dp"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/idSessionTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="left"
-            android:text="@string/placeholder_sessions_time"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/idSessionRSVP"
-            app:layout_constraintStart_toEndOf="@+id/idSessionName"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            <LinearLayout
+                android:id="@+id/grid_content_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingTop="8dp"
+                android:paddingBottom="4dp"
+                android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/idSessionDescription"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="@string/placeholder_sessions_description"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/idSessionRSVP"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/idSessionIcon"
-            app:layout_constraintTop_toBottomOf="@+id/idSessionName"
-            app:layout_constraintVertical_bias="0.0" />
+                <TextView
+                    android:id="@+id/idSessionName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:paddingEnd="8dp"
+                    android:text="@string/placeholder_sessions_name"
+                    android:textSize="@dimen/recycler_text_size"
+                    app:layout_constraintBottom_toTopOf="@+id/idSessionDescription"
+                    app:layout_constraintTop_toTopOf="@id/idSessionIcon" />
+
+                <TextView
+                    android:id="@+id/idSessionTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="@string/placeholder_sessions_time"
+                    android:textSize="@dimen/recycler_text_size"
+                    app:layout_constraintBottom_toTopOf="@+id/idSessionDescription"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/idSessionName"
+                    app:layout_constraintTop_toTopOf="@id/idSessionIcon" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/idSessionDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:paddingBottom="16dp"
+                android:text="@string/placeholder_sessions_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/idSessionRSVP"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/idSessionIcon"
+                app:layout_constraintTop_toBottomOf="@id/grid_content_header"
+                app:layout_constraintVertical_bias="0.0" />
+        </LinearLayout>
 
         <ImageView
             android:id="@+id/idSessionRSVP"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/recycler_content_half_height"
+            android:layout_height="@dimen/recycler_content_half_height"
+            android:layout_gravity="end|center_vertical"
             android:contentDescription="@string/placeholder_image"
-            android:src="@drawable/ic_baseline_check_box_outline_blank_24"
+            android:src="@drawable/ic_baseline_star_outline_24"
+            android:tooltipText="RSVP"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/idSessionDescription"
             app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </androidx.cardview.widget.CardView>
