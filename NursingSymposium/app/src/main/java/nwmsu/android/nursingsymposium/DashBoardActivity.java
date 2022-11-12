@@ -19,6 +19,8 @@ public class DashBoardActivity extends AppCompatActivity {
     RecyclerView id_dashboard_recycler;
     ArrayList<ConferenceModel> arrayList;
     ConstraintLayout logout;
+ BottomNavigationView bottomNavigationView;
+    FrameLayout frameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
