@@ -10,7 +10,7 @@ public class ToolsViewModel extends ViewModel {
 
     public ToolsViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is sessions fragment");
+        mText.setValue("Select an Action to perform");
     }
 
     public LiveData<String> getText() {

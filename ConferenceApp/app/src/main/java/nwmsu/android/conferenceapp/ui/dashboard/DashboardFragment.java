@@ -35,7 +35,7 @@ public class DashboardFragment extends Fragment {
         staffSwapBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Swap to the user actvitiy
+                // Swap to the staff actvitiy
                 Intent swapIntent = new Intent(getActivity(), StaffActivity.class);
                 startActivity( swapIntent);
             }
