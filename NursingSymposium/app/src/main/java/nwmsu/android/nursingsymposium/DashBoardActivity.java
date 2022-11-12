@@ -33,6 +33,7 @@ public class DashBoardActivity extends AppCompatActivity {
                 id_dashboard_recycler.setAdapter(new ConferenceAdapter(this,arrayList));
             }
         }
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,9 +47,17 @@ public class DashBoardActivity extends AppCompatActivity {
         });
     }
 
-
-
-  
-
-
+    private void getData() {
+        arrayList=new ArrayList<>();
+        arrayList.add(new ConferenceModel("Event1","CooldenHall","5:40"));
+        arrayList.add(new ConferenceModel("Event2","valkcenter","2:20"));
+        arrayList.add(new ConferenceModel("Event3","Admindepartment","6:40"));
+        arrayList.add(new ConferenceModel("Event4","StudentUnion","3:20"));
+    }
+//private void replacefragment(Fragment fragment) {
+      //  FragmentManager fm = getFragmentManager();
+      //  FragmentTransaction fragmentTransaction = fm.beginTransaction();
+      //  fragmentTransaction.replace(R.id.id_frameLayout, fragment);
+     //   fragmentTransaction.commit();
+   // }
 }
