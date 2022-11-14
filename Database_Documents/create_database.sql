@@ -21,13 +21,17 @@ $do$;
  * - This script is either to generate or update tables
  * - We can cleanly drop everything then
  */ 
-DROP TABLE IF EXISTS speaker CASCADE;
-DROP TABLE IF EXISTS event CASCADE;
-DROP TABLE IF EXISTS conference CASCADE;
-DROP TABLE IF EXISTS user CASCADE;
+DROP TABLE IF EXISTS events_speakers_table CASCADE;
+DROP TABLE IF EXISTS user_events_table CASCADE;
+DROP TABLE IF EXISTS speakers CASCADE;
+DROP TABLE IF EXISTS events CASCADE;
+DROP TABLE IF EXISTS conferences CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS app_info;
+DROP TABLE IF EXISTS audit_history;
 
-/* Create user table */
-CREATE TABLE user (
+/* Create users table */
+CREATE TABLE users (
 	user_id serial PRIMARY KEY,
 	email VARCHAR( 255) UNIQUE NOT NULL,
 	password VARCHAR( 50) NOT NULL,
@@ -36,8 +40,8 @@ CREATE TABLE user (
 	updated_date TIMESTAMP
 );
 
-/* Create conference table */
-CREATE TABLE conference (
+/* Create conferences table */
+CREATE TABLE conferences (
 	conference_id serial PRIMARY KEY,
 	name VARCHAR( 50) NOT NULL,
 	description VARCHAR( 255) NOT NULL,
@@ -47,14 +51,14 @@ CREATE TABLE conference (
 	created_date TIMESTAMP NOT NULL,
 	updated_date TIMESTAMP,
 	FOREIGN KEY (updated_user)
-		REFERENCES user (user_id)
+		REFERENCES users (user_id)
 );
 
-/* Create event table */
-CREATE TABLE event (
+/* Create events table */
+CREATE TABLE events (
 	event_id serial PRIMARY KEY,
 	FOREIGN KEY (conference_id)
-		REFERENCES conference (conference_id),
+		REFERENCES conferences (conference_id),
 	name VARCHAR( 50) NOT NULL,
 	description VARCHAR( 255) NOT NULL,
 	start_date TIMESTAMP NOT NULL,
@@ -63,32 +67,32 @@ CREATE TABLE event (
 	created_date TIMESTAMP NOT NULL,
 	updated_date TIMESTAMP,
 	FOREIGN KEY (updated_user)
-		REFERENCES user (user_id)
+		REFERENCES users (user_id)
 );
 
-/* Create speaker table */
-CREATE TABLE speaker (
+/* Create speakers table */
+CREATE TABLE speakers (
 	speaker_id serial PRIMARY KEY,
 	name VARCHAR( 50) NOT NULL,
 	bio VARCHAR( 255) NOT NULL,
 	created_date TIMESTAMP NOT NULL,
 	FOREIGN KEY (updated_user)
-		REFERENCES user (user_id)
+		REFERENCES users (user_id)
 );
 
-/* Create many to many for speaker/events */
-CREATE TABLE event_speaker_table (
-	event_id INT REFERENCES event (event_id) ON UPDATE CASCADE ON DELETE CASCADE,
-	speaker_id INT REFERENCES speaker (speaker_id) ON UPDATE CASCADE ON DELETE CASCADE,
+/* Create many to many for speakers/events */
+CREATE TABLE events_speakers_table (
+	event_id INT REFERENCES events (event_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	speaker_id INT REFERENCES speakers (speaker_id) ON UPDATE CASCADE ON DELETE CASCADE,
 	speaker_type INT DEFAULT 1,
-	CONSTRAINT event_speaker_pkey PRIMARY KEY (event_id, speaker_id)
+	CONSTRAINT events_speakers_pkey PRIMARY KEY (event_id, speaker_id)
 );
 
 /* Create RSVP table */
-CREATE TABLE user_event_table (
-	user_id INT REFERENCES user (user_id) ON UPDATE CASCADE ON DELETE CASCADE,
-	event_id INT REFERENCES event (event_id) ON UPDATE CASCADE ON DELETE CASCADE,
-	CONSTRAINT user_event_pkey PRIMARY KEY (user_id, event_id)
+CREATE TABLE users_events_table (
+	user_id INT REFERENCES users (user_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	event_id INT REFERENCES events (event_id) ON UPDATE CASCADE ON DELETE CASCADE,
+	CONSTRAINT users_events_pkey PRIMARY KEY (user_id, event_id)
 );
 
 /* Create table to track app statistics */
@@ -97,7 +101,7 @@ CREATE TABLE app_info (
 	description VARCHAR( 255) NOT NULL,
 	updated_date TIMESTAMP,
 	FOREIGN KEY (updated_user)
-		REFERENCES user (user_id)
+		REFERENCES users (user_id)
 );
 
 /* Not sure if we need this yet, or ever
@@ -110,5 +114,5 @@ CREATE TABLE audit_history (
 	description VARCHAR( 50) NOT NULL,
 	created_date TIMESTAMP NOT NULL,
 	FOREIGN KEY (instance_user)
-		REFERENCES user (user_id)
+		REFERENCES users (user_id)
 );
