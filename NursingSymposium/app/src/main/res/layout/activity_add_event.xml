@@ -136,4 +136,41 @@
             />
 
 
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/speaker_outlinedTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="#757575"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        app:boxStrokeColor="#1277DC"
+        app:layout_constraintTop_toBottomOf="@id/location_outlinedTextField"
+        android:hint="Conference Location"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:id="@+id/id_locationss"
+            android:textColor="@color/black"
+            android:hint="Enter Conference Location"
+            android:textColorHint="#757575"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/image"
+        android:text="add image"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/speaker_outlinedTextField"
+        android:layout_height="@dimen/_45sdp"/>
+
+  
 </ScrollView>
