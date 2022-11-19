@@ -172,5 +172,22 @@
         app:layout_constraintTop_toBottomOf="@id/speaker_outlinedTextField"
         android:layout_height="@dimen/_45sdp"/>
 
-  
+        <ImageView
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_width="@dimen/_200sdp"
+            android:id="@+id/imageview"
+            app:layout_constraintTop_toBottomOf="@id/image"
+            android:layout_height="@dimen/_200sdp"/>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:id="@+id/submitevent"
+            android:text="Submit Event"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/imageview"
+            android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
