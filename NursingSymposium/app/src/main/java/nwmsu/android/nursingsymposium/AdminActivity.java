@@ -18,6 +18,24 @@ public class AdminActivity extends AppCompatActivity {
 
     FloatingActionButton addEvent;
     RecyclerView id_dashboard_recycler;
- 
+    ArrayList<ConferenceDataModel> models;
+ @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_admin);
+        addEvent=findViewById(R.id.addEvent);
+        id_dashboard_recycler=findViewById(R.id.id_dashboard_recycler);
+        id_dashboard_recycler.setLayoutManager(new LinearLayoutManager(AdminActivity.this));
+
+        getdata();
+        addEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(AdminActivity.this,AddEventActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
    
 }
