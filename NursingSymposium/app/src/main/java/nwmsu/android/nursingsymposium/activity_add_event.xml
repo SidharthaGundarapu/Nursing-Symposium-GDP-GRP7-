@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="@dimen/_14sdp"
+    android:paddingLeft="@dimen/_14sdp"
+    android:paddingTop="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_5sdp"
+    android:background="#F6F3F3"
+    tools:context=".admin.AddEventActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Add Event"
+        android:id="@+id/text_addevent"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/_20sdp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_outlinedTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:hintTextColor="#757575"
+        app:boxStrokeColor="#1277DC"
+        app:layout_constraintTop_toBottomOf="@id/text_addevent"
+        android:hint="Conference Name"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/id_conferenceName"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:hint="Enter Conference Name"
+            android:textColorHint="#757575"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/description_outlinedTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        app:hintTextColor="#757575"
+        android:background="@color/white"
+        app:boxStrokeColor="#1277DC"
+        app:layout_constraintTop_toBottomOf="@id/name_outlinedTextField"
+        android:hint="Conference Description"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/id_description"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            android:hint="Enter Conference Description"
+            android:textColorHint="#757575"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/selectDate"
+        android:textColor="@color/black"
+        android:text="Select Date"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/description_outlinedTextField"
+        android:layout_height="@dimen/_45sdp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/time_outlinedTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="#757575"
+        android:background="@color/white"
+
+        app:boxStrokeColor="#1277DC"
+        app:layout_constraintTop_toBottomOf="@id/selectDate"
+        android:hint="Conference Time"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/id_time"
+            android:textColor="@color/black"
+            android:hint="Enter Conference Time"
+            android:background="@color/white"
+
+            android:textColorHint="#757575"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/location_outlinedTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="#757575"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        app:boxStrokeColor="#1277DC"
+        app:layout_constraintTop_toBottomOf="@id/time_outlinedTextField"
+        android:hint="Conference Location"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/id_location"
+            android:background="@color/white"
+
+            android:textColor="@color/black"
+            android:hint="Enter Conference Location"
+            android:textColorHint="#757575"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/speaker_outlinedTextField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextColor="#757575"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/_10sdp"
+
+        app:boxStrokeColor="#1277DC"
+        app:layout_constraintTop_toBottomOf="@id/location_outlinedTextField"
+        android:hint="Conference Location"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:id="@+id/id_locationss"
+            android:textColor="@color/black"
+            android:hint="Enter Conference Location"
+            android:textColorHint="#757575"
+            android:layout_height="wrap_content"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/image"
+        android:text="add image"
+        android:textColor="@color/black"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/speaker_outlinedTextField"
+        android:layout_height="@dimen/_45sdp"/>
+
+    <ImageView
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="@dimen/_200sdp"
+        android:id="@+id/imageview"
+        app:layout_constraintTop_toBottomOf="@id/image"
+        android:layout_height="@dimen/_200sdp"/>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/submitevent"
+        android:text="Submit Event"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/imageview"
+        android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
