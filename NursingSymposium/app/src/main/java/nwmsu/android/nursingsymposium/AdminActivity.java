@@ -18,7 +18,6 @@ public class AdminActivity extends AppCompatActivity {
 
     FloatingActionButton addEvent;
     RecyclerView id_dashboard_recycler;
-    ArrayList<ConferenceDataModel> models;
-
+ 
    
 }
