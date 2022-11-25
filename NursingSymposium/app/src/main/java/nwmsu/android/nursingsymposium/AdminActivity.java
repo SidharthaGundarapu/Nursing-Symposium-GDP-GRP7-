@@ -37,5 +37,8 @@ public class AdminActivity extends AppCompatActivity {
         });
     }
 
+    private void getdata() {
+
+    }
    
 }
