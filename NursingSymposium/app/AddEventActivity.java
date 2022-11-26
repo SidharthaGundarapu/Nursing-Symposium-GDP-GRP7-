@@ -143,3 +143,86 @@ public class AddEventActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 11) {
+            if (grantResults.length > 0
+                    && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                opengallery();
+            }
+        }
+    }
+
+    private void opengallery() {
+        Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(pickPhoto , 22);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_CANCELED) {
+            switch (requestCode) {
+                case 22:
+                    if (resultCode == RESULT_OK && data != null) {
+                        Uri selectedImage = data.getData();
+                        String[] filePathColumn = {MediaStore.Images.Media.DATA};
+                        if (selectedImage != null) {
+                            Cursor cursor = getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                            if (cursor != null) {
+                                cursor.moveToFirst();
+                                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                                String picturePath = cursor.getString(columnIndex);
+                                imagestring=picturePath;
+                                imageview.setImageBitmap(BitmapFactory.decodeFile(picturePath));
+                                cursor.close();
+                            }
+                            uploadImagetofirebase(selectedImage);
+
+                        }
+                    }
+                    break;
+            }
+        }
+    }
+
+    private void uploadImagetofirebase(Uri selectedImage) {
+           if(selectedImage!=null){
+               // Defining the child of storageReference
+              FirebaseStorage storage = FirebaseStorage.getInstance();
+             StorageReference  storageReference = storage.getReference();
+               StorageReference ref
+                       = storageReference
+                       .child(
+                               "images/"
+                                       + UUID.randomUUID().toString());
+               UploadTask uploadTask = ref.putFile(selectedImage);
+
+               Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                   @Override
+                   public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                       if (!task.isSuccessful()) {
+                           throw task.getException();
+                       }
+                       return ref.getDownloadUrl();
+
+                   }
+               }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                   @Override
+                   public void onComplete(@NonNull Task<Uri> task) {
+                       if (task.isSuccessful()) {
+                           Uri downloadUri = task.getResult();
+                           imagestring=downloadUri.toString();
+
+                       } else {
+                           // Handle failures
+                       }
+                   }
+               });
+
+
+           }
+    }
+}
