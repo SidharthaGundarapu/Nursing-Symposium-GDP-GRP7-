@@ -78,3 +78,4 @@ Alexander Dieringer
 @11/25/2022
 1) Working on functional aspects regarding forgot password as it was not working when two persons trying to initiate passwords.
 2) Helping the team in database as it was biggest obstacle we facing from starting.
+3) Will work on the final submission to present more efficiently and accurately without any issues.
