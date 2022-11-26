@@ -77,3 +77,4 @@ Alexander Dieringer
 3) Studying on the existing API's for the discussed features.
 @11/25/2022
 1) Working on functional aspects regarding forgot password as it was not working when two persons trying to initiate passwords.
+2) Helping the team in database as it was biggest obstacle we facing from starting.
