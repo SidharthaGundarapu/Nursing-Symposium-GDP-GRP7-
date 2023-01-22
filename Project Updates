@@ -44,3 +44,4 @@ are clarified which are in the notes.
 [Updates: 01/22/2023]
 1) Well until now the project has the objectives acheieved like the individual pages of UI and setup of the firebase database for the application. 
 2) Now we are going to integrate all the pages and perform the missed objectives like the RSVP functionality, validations for the admin and user in the database. 
+3) The Testing of the complete application should be performed along with it's functionalities check before the submission of the application to the client. 
