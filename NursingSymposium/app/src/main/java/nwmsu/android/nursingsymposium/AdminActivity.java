@@ -40,6 +40,16 @@ public class AdminActivity extends AppCompatActivity {
         id_dashboard_recycler=findViewById(R.id.id_dashboard_recycler);        
         id_dashboard_recycler.setLayoutManager(new LinearLayoutManager(AdminActivity.this));
 
+        arrayList=new ArrayList<>();        
+        getData(arrayList);        
+        addEvent.setOnClickListener(new View.OnClickListener() {            
+            @Override            
+            public void onClick(View view) {                
+                Intent intent=new Intent(AdminActivity.this,AddEventActivity.class);                
+                startActivity(intent);            
+            }        
+        });
+
 
 
 
