@@ -1,0 +1,40 @@
+package com.example.nursingsymposium.admin;
+
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.nursingsymposium.ConferenceAdapter;
+import com.example.nursingsymposium.ConferenceDataModel;
+import com.example.nursingsymposium.DashBoardActivity;
+import com.example.nursingsymposium.R;
+
+import java.util.ArrayList;
+
+public class AdminConferenceAdapter   extends RecyclerView.Adapter<AdminConferenceAdapter.ViewHolder>{
+    AdminActivity activity;
+    ArrayList<ConferenceDataModel> list;
+
+    public AdminConferenceAdapter(AdminActivity dashBoardActivity, ArrayList<ConferenceDataModel> arrayList) {
+        this.activity=dashBoardActivity;
+        this.list=arrayList;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View listItem= layoutInflater.inflate(R.layout.list_item, parent, false);
+       ViewHolder viewHolder = new ViewHolder(listItem);
+        return viewHolder;
+    }
+
+   
+}
