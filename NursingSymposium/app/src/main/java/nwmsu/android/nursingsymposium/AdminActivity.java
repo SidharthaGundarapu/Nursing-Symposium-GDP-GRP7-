@@ -23,3 +23,34 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+
+public class AdminActivity extends AppCompatActivity {
+    
+    FloatingActionButton addEvent,addConferrence;
+    RecyclerView id_dashboard_recycler;    
+    ArrayList<ConferenceDataModel> arrayList;    
+    AdminConferenceAdapter adminConferenceAdapter;    
+    
+    @Override    
+    protected void onCreate(Bundle savedInstanceState) {        
+        super.onCreate(savedInstanceState);        
+        setContentView(R.layout.activity_admin);        
+        addEvent=findViewById(R.id.addEvent);        
+        addConferrence=findViewById(R.id.addConferrence);        
+        id_dashboard_recycler=findViewById(R.id.id_dashboard_recycler);        
+        id_dashboard_recycler.setLayoutManager(new LinearLayoutManager(AdminActivity.this));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
