@@ -65,6 +65,27 @@ public class AdminActivity extends AppCompatActivity {
         FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();        
         DatabaseReference databaseReference=firebaseDatabase.getReference("Events");        
         databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override            
+            public void onDataChange(@NonNull DataSnapshot snapshot) {                
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){                    
+                    ConferenceDataModel model=dataSnapshot.getValue(ConferenceDataModel.class);                  
+                    arrayList.add(model);                
+                } 
+
+            adminConferenceAdapter.notifyDataSetChanged();
+
+            }            
+            
+            @Override            
+            public void onCancelled(@NonNull DatabaseError error) {            
+
+            } 
+
+        });    
+    
+    }
+    
+}
 
 
 
