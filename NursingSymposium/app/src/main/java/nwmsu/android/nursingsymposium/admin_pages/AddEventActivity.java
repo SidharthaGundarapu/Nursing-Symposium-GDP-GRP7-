@@ -195,4 +195,41 @@ public class AddEventActivity extends AppCompatActivity {
         }
     }
 
-    
+    private void uploadImagetofirebase(Uri selectedImage) {
+           if(selectedImage!=null){
+               // Defining the child of storageReference
+              FirebaseStorage storage = FirebaseStorage.getInstance();
+             StorageReference  storageReference = storage.getReference();
+               StorageReference ref
+                       = storageReference
+                       .child(
+                               "images/"
+                                       + UUID.randomUUID().toString());
+               UploadTask uploadTask = ref.putFile(selectedImage);
+
+               Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                   @Override
+                   public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                       if (!task.isSuccessful()) {
+                           throw task.getException();
+                       }
+                       return ref.getDownloadUrl();
+
+                   }
+               }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                   @Override
+                   public void onComplete(@NonNull Task<Uri> task) {
+                       if (task.isSuccessful()) {
+                           Uri downloadUri = task.getResult();
+                           imagestring=downloadUri.toString();
+
+                       } else {
+                           // Handle failures
+                       }
+                   }
+               });
+
+
+           }
+    }
+}
