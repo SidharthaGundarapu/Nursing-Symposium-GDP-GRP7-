@@ -49,6 +49,13 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(intent);            
             }        
         });
+        addConferrence.setOnClickListener(new View.OnClickListener() {            
+            @Override            
+            public void onClick(View view) {                
+                Intent intent=new Intent(AdminActivity.this,AddConferenceActivity.class);                
+                startActivity(intent);            
+            }        
+        });
 
 
 
