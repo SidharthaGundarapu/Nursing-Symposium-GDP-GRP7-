@@ -56,6 +56,15 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(intent);            
             }        
         });
+        adminConferenceAdapter= new AdminConferenceAdapter(AdminActivity.this,arrayList);        
+        id_dashboard_recycler.setAdapter(adminConferenceAdapter);    
+    }    
+    
+    private void getData(ArrayList<ConferenceDataModel> arrayList) {        
+        
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();        
+        DatabaseReference databaseReference=firebaseDatabase.getReference("Events");        
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
 
 
 
