@@ -1,5 +1,6 @@
 package nwmsu.android.conferenceapp.dbmodels;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -93,5 +94,10 @@ public class ConferenceEvent {
     public String[] getKeynoteSpeakers() { return this.keynoteSpeakers; }
 
     public String[] getBreakoutspeakers() { return this.breakoutspeakers; }
+
+    public boolean isUserAttendingEvent( String username) {
+        boolean contains = Arrays.asList( this.usersAttending).contains( username);
+        return contains;
+    }
 
 }
