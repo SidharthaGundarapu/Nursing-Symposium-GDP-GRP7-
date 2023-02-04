@@ -49,6 +49,43 @@ public class AdminActivity extends AppCompatActivity {
                 startActivity(intent);            
             }        
         });
+        addConferrence.setOnClickListener(new View.OnClickListener() {            
+            @Override            
+            public void onClick(View view) {                
+                Intent intent=new Intent(AdminActivity.this,AddConferenceActivity.class);                
+                startActivity(intent);            
+            }        
+        });
+        adminConferenceAdapter= new AdminConferenceAdapter(AdminActivity.this,arrayList);        
+        id_dashboard_recycler.setAdapter(adminConferenceAdapter);    
+    }    
+    
+    private void getData(ArrayList<ConferenceDataModel> arrayList) {        
+        
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();        
+        DatabaseReference databaseReference=firebaseDatabase.getReference("Events");        
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override            
+            public void onDataChange(@NonNull DataSnapshot snapshot) {                
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){                    
+                    ConferenceDataModel model=dataSnapshot.getValue(ConferenceDataModel.class);                  
+                    arrayList.add(model);                
+                } 
+
+            adminConferenceAdapter.notifyDataSetChanged();
+
+            }            
+            
+            @Override            
+            public void onCancelled(@NonNull DatabaseError error) {            
+
+            } 
+
+        });    
+    
+    }
+    
+}
 
 
 
