@@ -17,6 +17,8 @@ public class ConferenceEvent {
 
     protected String conference_id;
     protected String[] usersAttending;
+    protected String[] keynoteSpeakers;
+    protected String[] breakoutspeakers;
 
     public ConferenceEvent() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
@@ -87,4 +89,9 @@ public class ConferenceEvent {
     public String[] getUsersAttending() {
         return this.usersAttending;
     }
+
+    public String[] getKeynoteSpeakers() { return this.keynoteSpeakers; }
+
+    public String[] getBreakoutspeakers() { return this.breakoutspeakers; }
+
 }
