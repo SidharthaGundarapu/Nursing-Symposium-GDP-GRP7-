@@ -62,9 +62,7 @@ public class AdminActivity extends AppCompatActivity {
     
     private void getData(ArrayList<ConferenceDataModel> arrayList) {        
         
-        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();        
-        DatabaseReference databaseReference=firebaseDatabase.getReference("Events");        
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+    
             @Override            
             public void onDataChange(@NonNull DataSnapshot snapshot) {                
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){                    
@@ -81,7 +79,7 @@ public class AdminActivity extends AppCompatActivity {
 
             } 
 
-        });    
+        });   
     
     }
     
