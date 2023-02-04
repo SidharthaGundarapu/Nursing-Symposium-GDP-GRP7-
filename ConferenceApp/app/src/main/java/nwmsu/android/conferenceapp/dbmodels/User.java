@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class User {
 
+    protected int id;
     protected String username;
     protected String email;
     protected int user_role;

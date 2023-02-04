@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class Conference {
 
+    protected int id;
     protected String name;
     protected String description;
     protected Date start_date;
