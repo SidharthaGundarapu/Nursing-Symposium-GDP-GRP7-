@@ -58,14 +58,8 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Enter UserName", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(password)) {
                     Toast.makeText(LoginActivity.this, "Enter Password", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    try {
-                        progressDialog = new ProgressDialog(LoginActivity.this);
-                        progressDialog.setMessage("Loading....");
-                        progressDialog.show();
-                        FirebaseAuth.getInstance().signInWithEmailAndPassword(username, password)
-                                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                } else 
+                     {
                                     @Override
                                     public void onComplete(@NonNull Task<AuthResult> task) {
                                         progressDialog.cancel();
@@ -200,13 +194,9 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void updateUiWithUser(LoggedInUserView model) {
-        String welcome = getString(R.string.welcome) + model.getDisplayName();
-        // TODO : initiate successful logged in experience
-        Toast.makeText(getApplicationContext(), welcome, Toast.LENGTH_LONG).show();
+   
     }
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
-}
