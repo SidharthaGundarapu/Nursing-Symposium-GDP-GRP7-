@@ -52,5 +52,17 @@ public class ConferenceFragment extends Fragment {
         });
 
     }
-   
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view= inflater.inflate(R.layout.fragment_conference, container, false);
+        id_dashboard_recycler=view.findViewById(R.id.id_dashboard_recycler);
+        id_dashboard_recycler.setLayoutManager(new LinearLayoutManager(getActivity()));
+        arrayList=new ArrayList<>();
+        getData(arrayList);
+        conferenceAdapter= new ConferenceAdapter((DashBoardActivity) getActivity(),arrayList);
+        return view;
+    }
+
+
 }
