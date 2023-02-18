@@ -62,7 +62,28 @@ public class AdminConferenceAdapter  extends RecyclerView.Adapter<AdminConferenc
     });
 }
 
+@Override
 
+public int getItemCount() {
+    return list.size();
+} 
+
+public static class ViewHolder extends RecyclerView.ViewHolder {
+    public TextView listevent;
+    public TextView listtime;
+    public LinearLayout layout_click;
+    public TextView listname;
+    public ImageView addtoschedule;
+    public ViewHolder(View itemView) {
+        super(itemView);
+        this.listname = (TextView) itemView.findViewById(R.id.listname);
+        this.addtoschedule = (ImageView) itemView.findViewById(R.id.add_to_schedule);
+        this.listtime = (TextView) itemView.findViewById(R.id.listtime);
+        this.listevent = (TextView) itemView.findViewById(R.id.listevent);
+        this.layout_click = (LinearLayout)itemView.findViewById(R.id.layout_click);
+    }
+}
+}
 
 
 
