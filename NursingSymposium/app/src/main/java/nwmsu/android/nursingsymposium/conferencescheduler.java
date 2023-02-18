@@ -42,4 +42,16 @@ String name=getIntent().getStringExtra("name");
         conference_location.setText(loca);
         conference_location.setText(loca);
         Picasso.get().load(image).into(conference_image);
-
+speaker_click.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(ConferenceSchedulerActivity.this,SpeakerActivity.class);
+                    intent.putExtra("aboutSpeaker",aboutSpeaker);
+                    intent.putExtra("spekaer",spekaer);
+                    intent.putExtra("spekaer",spekaer);
+                    intent.putExtra("image",image);
+                    startActivity(intent);
+                }
+            });
+        }
+    }
