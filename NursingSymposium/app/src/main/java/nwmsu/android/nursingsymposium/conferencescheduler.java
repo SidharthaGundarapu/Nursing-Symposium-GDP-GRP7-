@@ -25,4 +25,21 @@ public class ConferenceSchedulerActivity extends AppCompatActivity {
         conference_speaker=findViewById(R.id.conference_speaker);
         conference_location=findViewById(R.id.conference_location);
         conference_time=findViewById(R.id.conference_time);
+String name=getIntent().getStringExtra("name");
+        String spekaer=getIntent().getStringExtra("speaker");
+        String loca=getIntent().getStringExtra("location");
+        String image=getIntent().getStringExtra("image");
+        String date=getIntent().getStringExtra("date");
+        String eventDescription=getIntent().getStringExtra("edventDescription");
+        String aboutSpeaker=getIntent().getStringExtra("aboutSpeaker");
+        String time=getIntent().getStringExtra("time");
+
+
+ 
+        conference_speaker.setText(spekaer);
+        conference_name.setText(name);
+        conference_time.setText(time);
+        conference_location.setText(loca);
+        conference_location.setText(loca);
+        Picasso.get().load(image).into(conference_image);
 
