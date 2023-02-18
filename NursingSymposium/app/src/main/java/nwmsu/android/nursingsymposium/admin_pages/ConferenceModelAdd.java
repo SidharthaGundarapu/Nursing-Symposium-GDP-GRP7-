@@ -29,4 +29,12 @@ public class ConferenceModelAdd {
         this.key = key;
     }
 
+    public ConferenceModelAdd() {
+    }
+
+    public ConferenceModelAdd(String key, String imageKey, String name) {
+        this.key = key;
+        this.imageKey = imageKey;
+        this.name = name;
+    }
 }
