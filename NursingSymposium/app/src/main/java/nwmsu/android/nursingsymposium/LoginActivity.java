@@ -77,14 +77,12 @@ public class LoginActivity extends AppCompatActivity {
                                 });
 
 
-                    } catch (Exception e
-                    ) {
+                    }catch (Exception e) {
                         e.printStackTrace();
                     }
 
                 }
-            }
-        });
+            ;
 
 
         register.setOnClickListener(new View.OnClickListener() {
