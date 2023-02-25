@@ -44,9 +44,9 @@ public class RegisterActivityTest {
         // Need to simulate input into the activity here
         // - Enter everything EXCEPT the name. We'll clear it in case
         onView(withId(R.id.id_name)).perform(clearText());
-        onView(withId(R.id.id_username)).perform(clearText(), typeText(""));
-        onView(withId(R.id.id_password)).perform(clearText(), typeText(""));
-        onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText(""));
+        onView(withId(R.id.id_username)).perform(clearText(), typeText("testUser"));
+        onView(withId(R.id.id_password)).perform(clearText(), typeText("myPW"));
+        onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText("myPW"));
 
         // When "Register" button is clicked
         onView(withId(R.id.register_btn)).perform(click());
