@@ -50,5 +50,9 @@ public class SchduleFragmentAdapter   extends RecyclerView.Adapter<SchduleFragme
         holder.event_time.setText(myListData.getTime());
         Picasso.get().load(myListData.getImage()).into(holder.event_image);
        holder.layout.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(activity, ConferenceSchedulerActivity.class);
      
+}
 }
