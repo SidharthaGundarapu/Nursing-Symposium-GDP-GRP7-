@@ -56,4 +56,49 @@ public class RegisterActivityTest {
                 .inRoot(withDecorView(Matchers.not(decorView)))
                 .check(matches(isDisplayed()));
     }
+
+    //Test for username validation Toast
+    @Test
+    public void testUsernameValidationToast() {
+        onView(withId(R.id.id_name)).perform(clearText(), typeText("Test Name"));
+        onView(withId(R.id.id_username)).perform(clearText());
+        onView(withId(R.id.id_password)).perform(clearText(), typeText("myPW"));
+        onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText("myPW"));
+
+        // When "Register" button is clicked check for appropriate toast
+        onView(withId(R.id.register_btn)).perform(click());
+        onView(withText("Enter Username"))
+                .inRoot(withDecorView(Matchers.not(decorView)))
+                .check(matches(isDisplayed()));
+    }
+
+    //Test for password validation Toast
+    @Test
+    public void testPasswordValidationToast() {
+        onView(withId(R.id.id_name)).perform(clearText(), typeText("Test Name"));
+        onView(withId(R.id.id_username)).perform(clearText(), typeText("testUser"));
+        onView(withId(R.id.id_password)).perform(clearText());
+        onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText("myPW"));
+
+        // When "Register" button is clicked check for appropriate toast
+        onView(withId(R.id.register_btn)).perform(click());
+        onView(withText("Enter password"))
+                .inRoot(withDecorView(Matchers.not(decorView)))
+                .check(matches(isDisplayed()));
+    }
+
+    //Test for password confirmation validation Toast
+    @Test
+    public void testPasswordValidationToast() {
+        onView(withId(R.id.id_name)).perform(clearText(), typeText("Test Name"));
+        onView(withId(R.id.id_username)).perform(clearText(), typeText("testUser"));
+        onView(withId(R.id.id_password)).perform(clearText(), typeText("myPW"));
+        onView(withId(R.id.id_confirmpassword)).perform(clearText());
+
+        // When "Register" button is clicked check for appropriate toast
+        onView(withId(R.id.register_btn)).perform(click());
+        onView(withText("Enter confirmpassword"))
+                .inRoot(withDecorView(Matchers.not(decorView)))
+                .check(matches(isDisplayed()));
+    }
 }
