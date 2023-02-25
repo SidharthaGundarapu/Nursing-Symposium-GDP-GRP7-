@@ -84,7 +84,17 @@ public class AdminActivity extends AppCompatActivity {
     }
     
 }
+package com.example.nursingsymposium.admin; 
+ public class ConferenceModelAdd {
+    String key;
 
+    String imageKey;
+
+    String name;  
+ 
+ public String getImageKey() {
+        return imageKey;
+    }
 
 
 
