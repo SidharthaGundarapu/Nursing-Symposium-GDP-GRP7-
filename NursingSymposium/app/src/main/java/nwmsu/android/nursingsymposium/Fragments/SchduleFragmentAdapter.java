@@ -74,5 +74,17 @@ public int getItemCount() {
     return list.size();
 }
 
+public static class ViewHolder extends RecyclerView.ViewHolder {
+
+    CircleImageView event_image;
+    ConstraintLayout layout;
+    TextView event_name,event_time;
+    public ViewHolder(View itemView) {
+        super(itemView);
+        this.event_image = (CircleImageView) itemView.findViewById(R.id.event_image);
+        this.event_name = (TextView) itemView.findViewById(R.id.event_name);
+        this.event_time = (TextView) itemView.findViewById(R.id.event_time);
+        this.layout = (ConstraintLayout) itemView.findViewById(R.id.layout);
+    }
 }
 }
