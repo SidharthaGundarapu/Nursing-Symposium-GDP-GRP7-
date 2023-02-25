@@ -53,6 +53,26 @@ public class SchduleFragmentAdapter   extends RecyclerView.Adapter<SchduleFragme
         @Override
         public void onClick(View view) {
             Intent intent = new Intent(activity, ConferenceSchedulerActivity.class);
-     
+            intent.putExtra("name",myListData.getName());
+            intent.putExtra("image",myListData.getImage());
+            intent.putExtra("location",myListData.getLocation());
+            intent.putExtra("date",myListData.getDate());
+            intent.putExtra("time",myListData.getTime());
+            intent.putExtra("speaker",myListData.getSpeaker());
+            intent.putExtra("eventDescription",myListData.getEventDescription());
+            intent.putExtra("aboutSpeaker",myListData.getAboutSpeaker());
+            activity.startActivity(intent);
+
+        }
+    });
+
+
+}
+
+@Override
+public int getItemCount() {
+    return list.size();
+}
+
 }
 }
