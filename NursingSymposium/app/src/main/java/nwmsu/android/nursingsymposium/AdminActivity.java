@@ -95,7 +95,18 @@ package com.example.nursingsymposium.admin; 
  public String getImageKey() {
         return imageKey;
     }
-
+  public void setImageKey(String imageKey) {
+            this.imageKey = imageKey;
+        }
+         public String getName() {
+            return name;
+        }  
+       public void setName(String name) {
+            this.name = name;
+        } 
+        public String getKey() {
+            return key;
+        }
 
 
 
