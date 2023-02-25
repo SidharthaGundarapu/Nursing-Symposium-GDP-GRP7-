@@ -107,7 +107,17 @@ package com.example.nursingsymposium.admin; 
         public String getKey() {
             return key;
         }
-
+    public void setKey(String key) {
+                this.key = key;
+            }   
+          public ConferenceModelAdd() {
+            }  
+           public ConferenceModelAdd(String key, String imageKey, String name) {
+                this.key = key;
+                this.imageKey = imageKey;
+                this.name = name;
+            }
+        }
 
 
 
