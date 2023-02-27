@@ -102,4 +102,18 @@ public class RegisterActivityTest {
                 .inRoot(withDecorView(Matchers.not(decorView)))
                 .check(matches(isDisplayed()));
     }
+
+    //Test for a mismatch Toast when both passwords are different
+    @Test
+    public void testPasswordMismatchToast() {
+        onView(withId(R.id.id_name)).perform(clearText(), typeText("Test Name"));
+        onView(withId(R.id.id_username)).perform(clearText(), typeText("testUser"));
+        onView(withId(R.id.id_password)).perform(clearText(), typeText("myPW"));
+        onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText("wrongPassword"));
+
+        // Check that the password mismatch is displayed
+        onView(withText("Password Mismatch"))
+                .inRoot(withDecorView(Matchers.not(decorView)))
+                .check(matches(isDisplayed()));
+    }
 }
