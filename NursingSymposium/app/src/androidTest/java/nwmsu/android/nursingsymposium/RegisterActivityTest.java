@@ -5,6 +5,7 @@ import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -89,7 +90,7 @@ public class RegisterActivityTest {
 
     //Test for password confirmation validation Toast
     @Test
-    public void testPasswordValidationToast() {
+    public void testPasswordConfirmationValidationToast() {
         onView(withId(R.id.id_name)).perform(clearText(), typeText("Test Name"));
         onView(withId(R.id.id_username)).perform(clearText(), typeText("testUser"));
         onView(withId(R.id.id_password)).perform(clearText(), typeText("myPW"));
