@@ -10,6 +10,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
+import static org.hamcrest.CoreMatchers.not;
+
 import android.view.View;
 
 import androidx.test.core.app.ActivityScenario;
@@ -115,5 +117,31 @@ public class RegisterActivityTest {
         onView(withText("Password Mismatch"))
                 .inRoot(withDecorView(Matchers.not(decorView)))
                 .check(matches(isDisplayed()));
+    }
+
+    //Test for all validation checks passed Toast
+    // - Might want to refactor to see if we can database assert as well
+    @Test
+    public void testRegistrationSuccessToast() {
+        onView(withId(R.id.id_name)).perform(clearText(), typeText("Test Name"));
+        onView(withId(R.id.id_username)).perform(clearText(), typeText("testUser"));
+        onView(withId(R.id.id_password)).perform(clearText(), typeText("myPW"));
+        onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText("myPW"));
+
+        onView(withId(R.id.register_btn)).perform(click());
+        onView(withText("Registration Succesfull"))
+                .inRoot(withDecorView(Matchers.not(decorView)))
+                .check(matches(isDisplayed()));
+        // Database assertion here if we can do that with Firestore
+
+        // Check that the error toast for saving is not displayed
+        onView(withText("Registration UnSuccessfull"))
+                .inRoot(withDecorView(Matchers.not(decorView)))
+                .check(matches(not(isDisplayed())));
+
+        // Check that the password mismatch is not displayed
+        onView(withText("Password Mismatch"))
+                .inRoot(withDecorView(Matchers.not(decorView)))
+                .check(matches(not(isDisplayed())));
     }
 }
