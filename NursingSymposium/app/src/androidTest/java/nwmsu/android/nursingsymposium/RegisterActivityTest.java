@@ -39,6 +39,19 @@ public class RegisterActivityTest {
         });
     }
 
+    private void checkToastDisplayed(View dView, String toastMsg) {
+        onView(withText(toastMsg))
+                .inRoot(withDecorView(Matchers.not(dView)))
+                .check(matches(isDisplayed()));
+    }
+
+    private void checkToastNotDisplayed(View dView, String toastMsg) {
+        onView(withText(toastMsg))
+                .inRoot(withDecorView(Matchers.not(dView)))
+                .check(matches(not(isDisplayed())));
+    }
+
+
     //Test for name validation Toast
     @Test
     public void testNameValidationToast() {
@@ -55,9 +68,7 @@ public class RegisterActivityTest {
         onView(withId(R.id.register_btn)).perform(click());
         // Check to see if Toast is displayed after the click action
         // - Should we define these toasts as constants in the activity?
-        onView(withText("Enter name"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(isDisplayed()));
+        checkToastDisplayed(decorView, "Enter name");
     }
 
     //Test for username validation Toast
@@ -70,9 +81,7 @@ public class RegisterActivityTest {
 
         // When "Register" button is clicked check for appropriate toast
         onView(withId(R.id.register_btn)).perform(click());
-        onView(withText("Enter Username"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(isDisplayed()));
+        checkToastDisplayed(decorView, "Enter Username");
     }
 
     //Test for password validation Toast
@@ -85,9 +94,7 @@ public class RegisterActivityTest {
 
         // When "Register" button is clicked check for appropriate toast
         onView(withId(R.id.register_btn)).perform(click());
-        onView(withText("Enter password"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(isDisplayed()));
+        checkToastDisplayed(decorView, "Enter password");
     }
 
     //Test for password confirmation validation Toast
@@ -100,9 +107,7 @@ public class RegisterActivityTest {
 
         // When "Register" button is clicked check for appropriate toast
         onView(withId(R.id.register_btn)).perform(click());
-        onView(withText("Enter confirmpassword"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(isDisplayed()));
+        checkToastDisplayed(decorView, "Enter confirmpassword");
     }
 
     //Test for a mismatch Toast when both passwords are different
@@ -114,9 +119,7 @@ public class RegisterActivityTest {
         onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText("wrongPassword"));
 
         // Check that the password mismatch is displayed
-        onView(withText("Password Mismatch"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(isDisplayed()));
+        checkToastDisplayed(decorView, "Password Mismatch");
     }
 
     //Test for all validation checks passed Toast
@@ -129,19 +132,8 @@ public class RegisterActivityTest {
         onView(withId(R.id.id_confirmpassword)).perform(clearText(), typeText("myPW"));
 
         onView(withId(R.id.register_btn)).perform(click());
-        onView(withText("Registration Succesfull"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(isDisplayed()));
-        // Database assertion here if we can do that with Firestore
-
-        // Check that the error toast for saving is not displayed
-        onView(withText("Registration UnSuccessfull"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(not(isDisplayed())));
-
-        // Check that the password mismatch is not displayed
-        onView(withText("Password Mismatch"))
-                .inRoot(withDecorView(Matchers.not(decorView)))
-                .check(matches(not(isDisplayed())));
+        checkToastDisplayed(decorView, "Registration Succesfull");
+        checkToastNotDisplayed(decorView, "Registration UnSuccessfull");
+        checkToastNotDisplayed(decorView, "Password Mismatch");
     }
 }
