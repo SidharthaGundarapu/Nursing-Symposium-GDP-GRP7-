@@ -21,6 +21,13 @@ public class SpeakerActivity extends AppCompatActivity {
         speakerabout=findViewById(R.id.speakerabout);
         speakerName=findViewById(R.id.speakerName);
         
+        String image=getIntent().getStringExtra("image");
+        String spekaer=getIntent().getStringExtra("spekaer");
+        String aboutSpeaker=getIntent().getStringExtra("aboutSpeaker");
+        speakerName.setText(speaker);
+        speakerabout.setText(aboutSpeaker);
+        Picasso.get().load(image).into(eventpic);
     
+    }
 
 }    
