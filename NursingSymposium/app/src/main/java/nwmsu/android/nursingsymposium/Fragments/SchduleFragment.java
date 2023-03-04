@@ -41,5 +41,20 @@ public class SchduleFragment extends Fragment {
         }
     }
 
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view= inflater.inflate(R.layout.fragment_schedule, container, false);
+        id_schedulelist=view.findViewById(R.id.id_schedulelist);
+        id_schedulelist.setLayoutManager(new LinearLayoutManager(getActivity()));
+        arrayList=new ArrayList<>();
+        getData(arrayList);
+        conferenceAdapter= new SchduleFragmentAdapter((DashBoardActivity) getActivity(),arrayList);
+        return  view;
+    }
+
+
+
+    
 }
 
