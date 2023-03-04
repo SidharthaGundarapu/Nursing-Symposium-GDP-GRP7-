@@ -55,6 +55,28 @@ public class SchduleFragment extends Fragment {
 
 
 
-    
+    private void getData(ArrayList<ConferenceDataModel> arrayList) {
+
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        String key= FirebaseAuth.getInstance().getUid();
+        DatabaseReference databaseReference=firebaseDatabase.getReference("MyEvents").child(key);
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    ConferenceDataModel model=dataSnapshot.getValue(ConferenceDataModel.class);
+                    arrayList.add(model);
+                }
+                conferenceAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 }
 
