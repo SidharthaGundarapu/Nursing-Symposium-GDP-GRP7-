@@ -18,3 +18,24 @@ public class SelectTypeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_select_type);
         student=findViewById(R.id.student);
         admin=findViewById(R.id.admins);
+
+        student.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SelectTypeActivity.this, RegisterActivity.class);
+                intent.putExtra("TYPE","STUDENT");
+                startActivity(intent);
+            }
+        });
+        
+        
+        admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(SelectTypeActivity.this,RegisterActivity.class);
+                intent.putExtra("TYPE","ADMIN");
+                startActivity(intent);
+            }
+        });
+    }
+}
