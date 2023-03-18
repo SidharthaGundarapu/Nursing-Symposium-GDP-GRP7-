@@ -63,3 +63,16 @@ public class ConferenceFragment extends Fragment {
         conferenceAdapter= new ConferenceAdapter((DashBoardActivity) getActivity(),arrayList);
         return view;
     }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        if(arrayList!=null){
+            if(arrayList.size()>=0){
+                id_dashboard_recycler.setAdapter(conferenceAdapter);
+            }
+        }
+
+
+    }
+}
