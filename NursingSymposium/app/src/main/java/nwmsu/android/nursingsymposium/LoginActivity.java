@@ -198,3 +198,17 @@ public class LoginActivity extends AppCompatActivity {
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
     }
+            return key;
+    }
+public void setKey(String key) {
+            this.key = key;
+        }   
+      public ConferenceModelAdd() {
+        }  
+       public ConferenceModelAdd(String key, String imageKey, String name) {
+            this.key = key;
+            this.imageKey = imageKey;
+            this.name = name;
+        }
+    }
+
