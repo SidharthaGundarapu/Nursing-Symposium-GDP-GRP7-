@@ -46,3 +46,37 @@ public class Event implements Serializable {
         this.subscribeDocumentID = subscribeDocumentID;
         this.surveyLink = surveyLink;
     }
+
+    public String getConferenceId() {
+        return conferenceId;
+    }
+
+    public String getKey() {
+        return key;
+    }
+    public String getSurveyLink() {
+        return surveyLink;
+    }
+    public String getType() {
+        return type;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public String getEventDescription() {
+        return eventDescription;
+    }
+
+    public String getSpeaker() {
+        return speaker;
+    }
+
+    public String getAboutSpeaker() {
+        return aboutSpeaker;
+    }
+
+    public String getLocation() {
+        return location;
+    }
