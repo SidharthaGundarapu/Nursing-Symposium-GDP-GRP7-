@@ -80,3 +80,48 @@ public class Event implements Serializable {
     public String getLocation() {
         return location;
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getSpeakerKey() {
+        return speakerKey;
+    }
+
+    public String getSubscribeDocumentID() {
+        return subscribeDocumentID;
+    }
+
+    public Date getEventTime() {
+        return eventTime;
+    }
+
+    public void setEventTime(Date eventTime) {
+        this.eventTime = eventTime;
+    }
+
+    public void setSubscribeDocumentID(String subscribeDocumentID) {
+        this.subscribeDocumentID = subscribeDocumentID;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+    public boolean hasEventTime() {
+        return eventTime != null;
+    }
+
+}
