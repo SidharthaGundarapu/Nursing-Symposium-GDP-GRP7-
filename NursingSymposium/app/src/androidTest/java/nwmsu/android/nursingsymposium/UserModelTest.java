@@ -25,7 +25,11 @@ public class UserModelTest {
 
     @Test
     public void createUser() {
-
+        Mockito.when(firebaseAuthRepositoryType.createUser("username", "password", "email@domain.com")).thenReturn(Completeable.complete());
+        userModel.createUser("username", "password", "email@domain.com")
+                .test()
+                .assertNoErrors()
+                .assertComplete();
     }
 
     @Test
