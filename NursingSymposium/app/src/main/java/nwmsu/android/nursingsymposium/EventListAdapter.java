@@ -160,7 +160,22 @@ public class EventListAdapter extends ListAdapter<Object, RecyclerView.ViewHolde
         }
     }
 
-   
+    static class HeaderViewHolder extends RecyclerView.ViewHolder {
+        private ListItemHeaderMainBinding binding;
+
+        public HeaderViewHolder(ListItemHeaderMainBinding binding) {
+            super(binding.getRoot());
+            this.binding = binding;
+        }
+
+        public void bind(String headerText) {
+            binding.tvName.setText(headerText);
+        }
+    }
+
+    public interface OnEventListItemClick {
+        void onClick(Event event);
+    }
 }
 
 
