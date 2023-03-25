@@ -119,6 +119,48 @@ public class EventListAdapter extends ListAdapter<Object, RecyclerView.ViewHolde
         submitList(items);
     }
 
+    class EventViewHolder extends RecyclerView.ViewHolder {
+        private ListItemEventBinding binding;
+        private final MySharedPreferences pref;
+
+        public EventViewHolder(ListItemEventBinding binding) {
+            super(binding.getRoot());
+            this.pref = MySharedPreferences.getInstance();
+            this.binding = binding;
+        }
+
+        public void bind(Event event) {
+            binding.tvEventName.setText(event.getEventName());
+            binding.tvDate.setText(Utils.dateFormat(event.getEventTime()));
+
+            if (TextUtils.equals(pref.userType(), Constants.USER_TYPE_STUDENT)) {
+                binding.ivEventAddOrRemove.setVisibility(View.VISIBLE);
+            } else {
+                binding.ivEventAddOrRemove.setVisibility(View.GONE);
+            }
+
+            binding.getRoot().setOnClickListener(v -> {
+                Intent i = new Intent(binding.getRoot().getContext(), EventDetailsActivity.class);
+                i.putExtra(Constants.EVENT, event);
+                binding.getRoot().getContext().startActivity(i);
+            });
+
+            int res;
+            if (event.getSubscribeDocumentID() != null) {
+                res = R.drawable.ic_remove_outline;
+            } else {
+                res = R.drawable.ic_add_outline;
+            }
+            binding.ivEventAddOrRemove.setImageResource(res);
+            binding.ivEventAddOrRemove.setOnClickListener(v -> {
+                if (clickListener != null) {
+                    clickListener.onClick(event);
+                }
+            });
+        }
+    }
+
+   
 }
 
 
