@@ -37,5 +37,152 @@ import java.util.Map;
 import java.util.Set;
 
 import java.util.stream.Collectors;
+public class SponsorAdapter extends ListAdapter<Object, RecyclerView.ViewHolder> {
 
+        private static final int SPONSOR_VIEW_TYPE = 1;
+    
+        private static final int HEADER_VIEW_TYPE = 2;
+    
+    
+    
+    
+        public SponsorAdapter() {
+    
+            super(new DiffUtil.ItemCallback<Object>() {
+    
+                @Override
+    
+                public boolean areItemsTheSame(@NonNull Object oldItem, @NonNull Object newItem) {
+    
+                    if (oldItem instanceof Sponsor && newItem instanceof Sponsor) {
+    
+                        return ((Sponsor) oldItem).getKey().equals(((Sponsor) newItem).getKey());
+    
+                    } else if (oldItem instanceof String && newItem instanceof String) {
+    
+                        return oldItem.equals(newItem);
+    
+                    } else {
+    
+                        return false;
+    
+                    }
+    
+                }
+    
+    
+    
+    
+                @Override
+    
+                public boolean areContentsTheSame(@NonNull Object oldItem, @NonNull Object newItem) {
+    
+                    return areItemsTheSame(oldItem, newItem);
+    
+                }
+    
+            });
+    
+        }
+    
+    
+    
+    
+        @Override
+    
+        public int getItemViewType(int position) {
+    
+            Object item = getItem(position);
+    
+            if (item instanceof Sponsor) {
+    
+                return SPONSOR_VIEW_TYPE;
+    
+            } else {
+    
+                return HEADER_VIEW_TYPE;
+    
+            }
+    
+        }
+    
+    
+    
+    
+        @NonNull
+    
+        @Override
+    
+        public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    
+            LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+    
+    
+    
+    
+            if (viewType == SPONSOR_VIEW_TYPE) {
+    
+                ListItemSponsorBinding binding = ListItemSponsorBinding.inflate(layoutInflater, parent, false);
+    
+                return new SponsorViewHolder(binding);
+    
+            } else {
+    
+                ListItemHeaderBinding binding = ListItemHeaderBinding.inflate(layoutInflater, parent, false);
+    
+                return new HeaderViewHolder(binding);
+    
+            }
+    
+    
+    
+    
+        }
+    
+    
+    
+    
+        @Override
+    
+        public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+    
+            Object item = getItem(position);
+    
+    
+    
+    
+            if (holder instanceof SponsorViewHolder && item instanceof Sponsor) {
+    
+                SponsorViewHolder sponsorViewHolder = (SponsorViewHolder) holder;
+    
+                Sponsor sponsor = (Sponsor) item;
+    
+                sponsorViewHolder.bind(sponsor);
+    
+            } else if (holder instanceof HeaderViewHolder && item instanceof String) {
+    
+                HeaderViewHolder headerViewHolder = (HeaderViewHolder) holder;
+    
+                String headerText = (String) item;
+    
+                headerViewHolder.bind(headerText);
+    
+            }
+    
+        }
+     
+        public void setSponsors(List<Sponsor> sponsors) {
+    
+            List<Object> items = new ArrayList<>();
+    
+            Map<String, List<Sponsor>> groupedMap = sponsors.stream()
+    
+                    .collect(Collectors.groupingBy(Sponsor::getType));
+    
+            Set<String> mySet = groupedMap.keySet();
+    
+            List<String> sortedType = new ArrayList<>(mySet);
+    
+            Collections.sort(sortedType);
+    
 
