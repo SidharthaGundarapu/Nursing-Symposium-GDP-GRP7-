@@ -185,4 +185,103 @@ public class SponsorAdapter extends ListAdapter<Object, RecyclerView.ViewHolder>
     
             Collections.sort(sortedType);
     
+        Set<String> sortedSet = new LinkedHashSet<>(sortedType);
 
+            for (String key : sortedSet) {
+    
+                if (!items.contains(key)) {
+    
+                    items.add(key);
+    
+                }
+    
+                List<Sponsor> group = groupedMap.get(key);
+    
+                for (Sponsor obj : group) {
+    
+                    items.add(obj);
+    
+                }
+    
+            }
+    
+    
+    
+    
+            submitList(items);
+    
+        }
+    
+    
+    
+    
+        static class SponsorViewHolder extends RecyclerView.ViewHolder {
+    
+            private ListItemSponsorBinding binding;
+    
+    
+    
+    
+            public SponsorViewHolder(ListItemSponsorBinding binding) {
+    
+                super(binding.getRoot());
+    
+                this.binding = binding;
+    
+            }
+    
+    
+    
+    
+            public void bind(Sponsor sponsor) {
+    
+                binding.tvName.setText(sponsor.getName());
+    
+                binding.tvDetails.setText(sponsor.getDetails());
+    
+                Picasso.get().load(sponsor.getImageUrl()).resize(300, 200).into(binding.iv);
+    
+                binding.getRoot().setOnClickListener(v -> {
+    
+                    Intent i = new Intent(binding.getRoot().getContext(), SponsorDetailsActivity.class);
+    
+                    i.putExtra(Constants.SPONSOR, sponsor);
+    
+                    binding.getRoot().getContext().startActivity(i);
+    
+                });
+    
+            }
+    
+        }
+    
+    
+    
+    
+        static class HeaderViewHolder extends RecyclerView.ViewHolder {
+    
+            private ListItemHeaderBinding binding;
+    
+    
+    
+    
+            public HeaderViewHolder(ListItemHeaderBinding binding) {
+    
+                super(binding.getRoot());
+    
+                this.binding = binding;
+    
+            }
+    
+    
+    
+    
+            public void bind(String headerText) {
+    
+                binding.tvName.setText(headerText);
+    
+            }
+    
+        }
+    
+    }
