@@ -1,4 +1,4 @@
-package nwmsu.android.nursingsymposium;
+package nwmsu.android.nursingsymposium.interactors;
 
 import nwmsu.android.nursingsymposium.data.model.RegistrationModel;
 
