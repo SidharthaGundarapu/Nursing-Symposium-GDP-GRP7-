@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center|start"
+            android:paddingHorizontal="10dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:background="@color/imageBackground"
+                android:id="@+id/iv"
+                android:scaleType="centerCrop"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_marginVertical="5dp"
+                android:layout_weight="0.55"
+                app:srcCompat="@drawable/speakers" />
+
+            <TextView
+                android:id="@+id/tvName"
+                style="@style/Body1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="10dp"
+                android:layout_weight="1"
+                tools:text="Hello" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivAddEvent"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="3dp"
+                android:tint="?colorPrimary"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_add_outline"
+                tools:visibility="visible" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
