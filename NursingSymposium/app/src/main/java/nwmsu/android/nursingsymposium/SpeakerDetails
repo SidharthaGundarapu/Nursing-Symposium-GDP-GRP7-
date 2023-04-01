@@ -1,0 +1,23 @@
+package com.nwmissouri.edu.conferencescheduler.activities;
+
+import android.annotation.SuppressLint;
+import android.os.Bundle;
+import android.view.MenuItem;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.nwmissouri.edu.conferencescheduler.adapter.SpeakersAdapter;
+import com.nwmissouri.edu.conferencescheduler.databinding.ActivitySpeakerDetailsBinding;
+import com.nwmissouri.edu.conferencescheduler.model.Conference;
+import com.nwmissouri.edu.conferencescheduler.model.Speaker;
+import com.nwmissouri.edu.conferencescheduler.utils.Constants;
+import com.nwmissouri.edu.conferencescheduler.utils.MySharedPreferences;
+import com.squareup.picasso.Picasso;
+
+import java.util.Objects;
+
+@SuppressLint("CustomSplashScreen")
+public class SpeakerDetailsActivity extends AppCompatActivity {
+    private MySharedPreferences pref;
+    private ActivitySpeakerDetailsBinding binding;
+    private Speaker speaker;
