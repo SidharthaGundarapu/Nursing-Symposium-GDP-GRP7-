@@ -591,7 +591,75 @@ public class FirebaseUtilsManager {
         return fileInBytes;
     }
 
-   
+    public static void listenSponsorsList(OnSponsorsListUpdateListener listener) {
+        Query query = dbSponsors;
+        query.addSnapshotListener((querySnapshot, e) -> {
+            if (e != null) {
+                Log.w(TAG, "Listen failed.", e);
+                listener.onUpdate(new ArrayList<>());
+                return;
+            }
+
+            if (querySnapshot != null) {
+                List<Sponsor> documents = querySnapshot.toObjects(Sponsor.class);
+                listener.onUpdate(documents);
+            } else {
+                listener.onUpdate(new ArrayList<>());
+            }
+        });
+    }
+
+    static void subscribeTopic(String id) {
+        FirebaseMessaging.getInstance().subscribeToTopic(id);
+    }
+
+    static void unSubscribeTopic(String id) {
+        FirebaseMessaging.getInstance().unsubscribeFromTopic(id);
+    }
+
+    static void sendNotification(Context context, String topic, String title, String body, final OnNotificationSentListener listener) {
+        String url = "https://fcm.googleapis.com/fcm/send";
+        String apiKey = "AAAAF2z6Hlk:APA91bE6AWbm0V5pUHhPfh-a3NgILaXHbSTbIS8kXMaA9d6RKixZYX954Xp0wmo9SQIR9loYUKzTNvOBcT-IssWrbhSP2FRGhZ8H8rMW_cgoyLczF5XLSgA3_ErEvJAM3gr3x484Awdg";
+
+        JSONObject payload = new JSONObject();
+        try {
+            payload.put("to", "/topics/" + topic);
+            payload.put("notification", new JSONObject()
+                    .put("title", title)
+                    .put("body", body)
+            );
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody requestBody = RequestBody.create(
+                MediaType.parse("application/json"),
+                payload.toString()
+        );
+
+        okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(url)
+                .post(requestBody)
+                .header("Authorization", "key=" + apiKey)
+                .build();
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, IOException e) {
+                e.printStackTrace();
+                listener.onFailure(e.getMessage());
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                // Handle response
+                String responseBody = response.body().string();
+                Log.d(TAG, responseBody);
+                listener.onSuccess(responseBody);
+            }
+        });
 
     }
 
