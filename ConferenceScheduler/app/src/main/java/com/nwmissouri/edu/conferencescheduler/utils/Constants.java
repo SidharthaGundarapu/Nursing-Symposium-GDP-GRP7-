@@ -15,7 +15,7 @@ public final class Constants {
 
     public static final String EDIT_MODE = "EDIT_MODE";
     public static final String ADD_MODE = "ADD_MODE";
-    public static final String USER_TYPE_STUDENT = "STUDENT";
+    public static final String USER_TYPE_STUDENT = "USER";
     public static final String EMAIL_SUPER_ADMIN = "admin@gmail.com";
     public static final String NAME_SUPER_ADMIN = "Admin";
     public static final String ID_SUPER_ADMIN = "superAdmin";
