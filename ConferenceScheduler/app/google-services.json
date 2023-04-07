@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "100612578905",
+    "firebase_url": "https://nursingsymposium-75010-default-rtdb.firebaseio.com",
+    "project_id": "nursingsymposium-75010",
+    "storage_bucket": "nursingsymposium-75010.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100612578905:android:5e882c7359f3f5734c9b48",
+        "android_client_info": {
+          "package_name": "com.example.nursingsymposium"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100612578905-p0qrholgeta0ol83kngvpp7qutb9hgj9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlPzho1cDmJmxdqIzA2Kw4MSaENGJB6zw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100612578905-p0qrholgeta0ol83kngvpp7qutb9hgj9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "100612578905-lredv6itvk1cec0k9e6p9gcaa4pbo1q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nwmissouri.edu.conferenceScheduler"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:100612578905:android:eb8c2fc48633553b4c9b48",
+        "android_client_info": {
+          "package_name": "com.nwmissouri.edu.conferencescheduler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "100612578905-p0qrholgeta0ol83kngvpp7qutb9hgj9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlPzho1cDmJmxdqIzA2Kw4MSaENGJB6zw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "100612578905-p0qrholgeta0ol83kngvpp7qutb9hgj9.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "100612578905-lredv6itvk1cec0k9e6p9gcaa4pbo1q5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.nwmissouri.edu.conferenceScheduler"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
