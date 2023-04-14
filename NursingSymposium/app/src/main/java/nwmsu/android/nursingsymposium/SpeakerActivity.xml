@@ -8,6 +8,21 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="40dp"
+        app:cardCornerRadius="10dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:scaleType="centerCrop"
+            android:id="@+id/ivSpeaker"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C8C8C8" />
+
+    </androidx.cardview.widget.CardView>
+
 
 
 
