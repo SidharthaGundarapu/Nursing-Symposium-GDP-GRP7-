@@ -2,6 +2,8 @@ package com.nwmissouri.edu.conferencescheduler.activities;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +12,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.nwmissouri.edu.conferencescheduler.R;
 import com.nwmissouri.edu.conferencescheduler.databinding.ActivityAddEventBinding;
 import com.nwmissouri.edu.conferencescheduler.model.Event;
@@ -72,6 +75,11 @@ public class EventDetailsActivity extends AppCompatActivity {
 
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        binding.tfEventName.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_NONE);
+        binding.tfEventName.getEditText().setBackground(new ColorDrawable(Color.WHITE));
+        binding.tfEventDesc.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_NONE);
+
 
     }
 
