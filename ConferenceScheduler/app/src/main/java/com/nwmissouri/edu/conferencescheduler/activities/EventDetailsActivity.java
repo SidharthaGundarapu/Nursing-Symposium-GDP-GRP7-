@@ -83,7 +83,9 @@ public class EventDetailsActivity extends AppCompatActivity {
         binding.tfEventLocation.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_NONE);
         binding.tfEventLocation.getEditText().setBackground(new ColorDrawable(Color.WHITE));
         binding.tfSpeakerDetails.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_NONE);
-
+        binding.tfSpeakerDetails.getEditText().setBackground(new ColorDrawable(Color.WHITE));
+        binding.tfSpeakerName.setBoxBackgroundMode(TextInputLayout.BOX_BACKGROUND_NONE);
+        binding.tfSpeakerName.getEditText().setBackground(new ColorDrawable(Color.WHITE));
 
     }
 
