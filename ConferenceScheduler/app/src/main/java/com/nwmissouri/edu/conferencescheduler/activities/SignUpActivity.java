@@ -54,19 +54,18 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
-        if (!isValidEmail(email)) {
-            ToastUtils.showToast(this, "Please enter valid email");
+        errorMessage = checkIfFieldsValid(signup);
+        if (!errorMessage.isEmpty()) {
+            ToastUtils.showToast(this, errorMessage);
             return;
         }
 
-        if (!isValidPassword(password, this)) {
+        String checkValid = isValidPassword(signup.getPassword());
+        if (!checkValid.isEmpty()) {
+            ToastUtils.showToast(this, checkValid);
             return;
         }
 
-        if (!TextUtils.equals(confirmPassword, password)) {
-            ToastUtils.showToast(this, "Password does not match");
-            return;
-        }
         FirebaseUtilsManager.createAccount(this, name, email.toLowerCase(), password, Constants.USER_TYPE_STUDENT, new FirebaseUtilsManager.OnOpListener() {
             @Override
             public void onSuccess(String msg) {
@@ -90,15 +89,29 @@ public class SignUpActivity extends AppCompatActivity {
         }
         if (signup.getEmail().isEmpty()) {
             prompt = "Please enter email";
-            errorMsg += (errorMsg.isEmpty()) ? prompt : prompt+"\n";
+            errorMsg += (errorMsg.isEmpty()) ? prompt : "\n"+prompt;
         }
         if (signup.getPassword().isEmpty()) {
             prompt = "Please enter password";
-            errorMsg += (errorMsg.isEmpty()) ? prompt : prompt+"\n";
+            errorMsg += (errorMsg.isEmpty()) ? prompt : "\n"+prompt;
         }
         if (signup.getConfirmPassword().isEmpty()) {
             prompt = "Please confirm password";
-            errorMsg += (errorMsg.isEmpty()) ? prompt : prompt+"\n";
+            errorMsg += (errorMsg.isEmpty()) ? prompt : "\n"+prompt;
+        }
+        return errorMsg;
+    }
+
+    public static String checkIfFieldsValid(SignupModel signup) {
+        String errorMsg = "";
+        String prompt = "";
+        if (!isValidEmail(signup.getEmail())) {
+            errorMsg += "Please enter valid email";
+        }
+
+        if (!TextUtils.equals(signup.getConfirmPassword(), signup.getPassword())) {
+            prompt = "Password does not match";
+            errorMsg += (errorMsg.isEmpty()) ? prompt : "\n"+prompt;
         }
         return errorMsg;
     }
@@ -111,10 +124,11 @@ public class SignUpActivity extends AppCompatActivity {
         }
     }
 
-    public static boolean isValidPassword(String password, Context context) {
+    public static String isValidPassword(String password) {
+        String errorMessage = "";
+        String prompt = "";
         if (password == null || password.length() < 4 || password.length() > 10) {
-            Toast.makeText(context, "Password length should be between 4 and 10", Toast.LENGTH_SHORT).show();
-            return false;
+            errorMessage += "Password length should be between 4 and 10";
         }
 
         boolean hasUppercase = false;
@@ -129,15 +143,15 @@ public class SignUpActivity extends AppCompatActivity {
         }
 
         if (!hasUppercase) {
-            Toast.makeText(context, "Password should contain at least one uppercase letter", Toast.LENGTH_SHORT).show();
-            return false;
+            prompt = "Password should contain at least one uppercase letter";
+            errorMessage += (errorMessage.isEmpty()) ? prompt : "\n"+prompt;
         }
 
         if (!hasSpecialChar) {
-            Toast.makeText(context, "Password should contain at least one special character", Toast.LENGTH_SHORT).show();
-            return false;
+            prompt = "Password should contain at least one special character";
+            errorMessage += (errorMessage.isEmpty()) ? prompt : "\n"+prompt;
         }
-        return true;
+        return errorMessage;
     }
 }
 
