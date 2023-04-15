@@ -9,6 +9,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nwmissouri.edu.conferencescheduler.databinding.ActivitySignupBinding;
+import com.nwmissouri.edu.conferencescheduler.model.SignupModel;
 import com.nwmissouri.edu.conferencescheduler.utils.Constants;
 import com.nwmissouri.edu.conferencescheduler.utils.FirebaseUtilsManager;
 import com.nwmissouri.edu.conferencescheduler.utils.ToastUtils;
@@ -41,20 +42,20 @@ public class SignUpActivity extends AppCompatActivity {
         String password = Objects.requireNonNull(binding.etPassword.getText()).toString();
         String confirmPassword = Objects.requireNonNull(binding.etConfirmPassword.getText()).toString();
 
-        if (TextUtils.isEmpty(name)) {
-            ToastUtils.showToast(this, "Please enter name");
+        SignupModel signup = new SignupModel();
+        signup.setUsername(name);
+        signup.setEmail(email);
+        signup.setPassword(password);
+        signup.setConfirmPassword(confirmPassword);
+
+        String errorMessage = checkIfFieldsEmpty(signup);
+        if (!errorMessage.isEmpty()) {
+            ToastUtils.showToast(this, errorMessage);
             return;
         }
-        if (TextUtils.isEmpty(email)) {
-            ToastUtils.showToast(this, "Please enter email");
-            return;
-        }
+
         if (!isValidEmail(email)) {
             ToastUtils.showToast(this, "Please enter valid email");
-            return;
-        }
-        if (TextUtils.isEmpty(password)) {
-            ToastUtils.showToast(this, "Please enter password");
             return;
         }
 
@@ -62,10 +63,6 @@ public class SignUpActivity extends AppCompatActivity {
             return;
         }
 
-        if (TextUtils.isEmpty(confirmPassword)) {
-            ToastUtils.showToast(this, "Please confirm password");
-            return;
-        }
         if (!TextUtils.equals(confirmPassword, password)) {
             ToastUtils.showToast(this, "Password does not match");
             return;
@@ -83,6 +80,27 @@ public class SignUpActivity extends AppCompatActivity {
                 ToastUtils.showToast(SignUpActivity.this, msg);
             }
         });
+    }
+
+    public static String checkIfFieldsEmpty(SignupModel signup) {
+        String errorMsg = "";
+        String prompt = "";
+        if (signup.getUsername().isEmpty()) {
+            errorMsg += "Please enter name";
+        }
+        if (signup.getEmail().isEmpty()) {
+            prompt = "Please enter email";
+            errorMsg += (errorMsg.isEmpty()) ? prompt : prompt+"\n";
+        }
+        if (signup.getPassword().isEmpty()) {
+            prompt = "Please enter password";
+            errorMsg += (errorMsg.isEmpty()) ? prompt : prompt+"\n";
+        }
+        if (signup.getConfirmPassword().isEmpty()) {
+            prompt = "Please confirm password";
+            errorMsg += (errorMsg.isEmpty()) ? prompt : prompt+"\n";
+        }
+        return errorMsg;
     }
 
     public static boolean isValidEmail(String email) {
