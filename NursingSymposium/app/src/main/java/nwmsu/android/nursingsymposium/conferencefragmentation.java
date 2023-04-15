@@ -30,6 +30,28 @@ public class ConferenceFragment extends Fragment {
     ArrayList<ConferenceDataModel> arrayList;
     ConferenceAdapter conferenceAdapter;
 
+    private void getData(ArrayList<ConferenceDataModel> arrayList) {
+
+        FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference=firebaseDatabase.getReference("Events");
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    ConferenceDataModel model=dataSnapshot.getValue(ConferenceDataModel.class);
+                    ConferenceFragment.this.arrayList.add(model);
+                }
+                conferenceAdapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
 
 
 
