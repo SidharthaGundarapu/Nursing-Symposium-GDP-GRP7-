@@ -233,9 +233,9 @@ public class SponsorAdapter extends ListAdapter<Object, RecyclerView.ViewHolder>
     
     
     
-            public void bind(Sponsor sponsor) {
+    public void bind(Sponsor sponsor) {
     
-                binding.tvName.setText(sponsor.getName());
+    binding.tvName.setText(sponsor.getName());
     
                 binding.tvDetails.setText(sponsor.getDetails());
     
