@@ -75,3 +75,50 @@ public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup c
 View view= inflater.inflate(R.layout.fragment_schedule, container, false);
 
 id_schedulelist=view.findViewById(R.id.id_schedulelist);
+
+id_schedulelist.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+arrayList=new ArrayList<>();
+
+getData(arrayList);
+
+conferenceAdapter= new SchduleFragmentAdapter((DashBoardActivity) getActivity(),arrayList);
+
+return  view;
+
+}
+
+ private void getData(ArrayList<ConferenceDataModel> arrayList) {
+
+FirebaseDatabase firebaseDatabase=FirebaseDatabase.getInstance();
+
+String key= FirebaseAuth.getInstance().getUid();
+
+DatabaseReference databaseReference=firebaseDatabase.getReference("MyEvents").child(key);
+
+databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+
+ @Override
+ public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+    for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+
+    ConferenceDataModel model=dataSnapshot.getValue(ConferenceDataModel.class);
+
+     arrayList.add(model);
+
+                }
+
+conferenceAdapter.notifyDataSetChanged();
+
+ }
+@Override
+ public void onCancelled(@NonNull DatabaseError error) {
+
+}
+
+});
+
+}
+
+}
