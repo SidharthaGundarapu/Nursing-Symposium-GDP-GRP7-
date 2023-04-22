@@ -73,5 +73,21 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
+    private void launchActivity() {
+
+        if (pref.shouldClearUser()) {
+            // Clear saved user information
+            Toast.makeText(this, "Session time expire", Toast.LENGTH_SHORT).show();
+            pref.logOut();
+        }
+
+        if (pref.isUserLoggedIn()) {
+            this.startActivity(new Intent(this, MainActivity.class));
+            finish();
+        } else {
+            this.startActivity(new Intent(this, LoginActivity.class));
+            finish();
+        }
+    }
 
 }
