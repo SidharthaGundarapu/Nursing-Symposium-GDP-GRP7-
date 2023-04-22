@@ -37,3 +37,41 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+
+public class SchduleFragment extends Fragment {
+
+RecyclerView id_schedulelist;
+
+ArrayList<ConferenceDataModel> arrayList;
+
+SchduleFragmentAdapter conferenceAdapter;
+
+@Override
+
+public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+
+   super.onViewCreated(view, savedInstanceState);
+
+        if(arrayList!=null){
+
+            if(arrayList.size()>=0){
+
+                id_schedulelist.setAdapter(conferenceAdapter);
+
+            }
+
+        }
+
+    }
+
+@Nullable
+
+@Override
+
+public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+View view= inflater.inflate(R.layout.fragment_schedule, container, false);
+
+id_schedulelist=view.findViewById(R.id.id_schedulelist);
